@@ -5,7 +5,7 @@ const fallbackThumb = "https://qu.ax/mgyIh"
 let handler = m => m
 
 handler.all = async function (m) {
-    global.wm = 'ᴠᴇsᴛɪᴀ ᴢᴇᴛᴀ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ'
+    global.wm = 'ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻'
 
     // === Thumbnail Loader ===
     let thumb
@@ -21,11 +21,11 @@ handler.all = async function (m) {
             forwardingScore: 999,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterName: `「 VESTIA ZETA - MD 」`,
-                newsletterJid: "120363405424415956@newsletter"
+                newsletterName: `「 ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻ 」`,
+                newsletterJid: "120363199397739684@newsletter"
             },
             externalAdReply: {
-                title: `ᴢᴇᴛᴀ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ`,
+                title: `ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻`,
                 body: `${momentGreeting()}`,
                 previewType: "PHOTO",
                 thumbnail: thumb
@@ -119,7 +119,7 @@ END:VCARD`,
                     description: "Simple Bot ESM",
                     currencyCode: "IDR",
                     priceAmount1000: "20000000",
-                    retailerId: "Vestia Zeta",
+                    retailerId: "ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻",
                     productImageCount: 1
                 },
                 businessOwnerJid: `0@s.whatsapp.net`
@@ -148,7 +148,7 @@ END:VCARD`,
             groupInviteMessage: {
                 groupJid: "628xxx-xxx@g.us",
                 inviteCode: "null",
-                groupName: "Vestia Zeta Community",
+                groupName: "ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻ Community",
                 caption: wm,
                 jpegThumbnail: thumb
             }
