@@ -1,4 +1,4 @@
-# ⚡ ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻ ⚡
+# 📸 ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻ 📸
 Bot WhatsApp Multifungsi | Base dari **Nao MD** | Full **Plugins ESM**  
 
 ---
@@ -20,7 +20,13 @@ Bot WhatsApp Multifungsi | Base dari **Nao MD** | Full **Plugins ESM**
 
 ## 📥 Download
 👉 link sama info SC ada di saluran:  
-[Klik di sini untuk join](https://whatsapp.com/channel/0029VaF9C4zId7nOTFF8ZK0v)
+[Klik di sini untuk follow](https://whatsapp.com/channel/0029VaF9C4zId7nOTFF8ZK0v)
+
+---
+
+## 💾 Info Bot
+👉🏻 Link sama nomer bot ada di grup bot:
+[Klik di sini untuk join]([https://whatsapp.com/channel/0029VaF9C4zId7nOTFF8ZK0v](https://chat.whatsapp.com/ITDnYU2kXuj97Gb2Xw8yzQ))
 
 ---
 
