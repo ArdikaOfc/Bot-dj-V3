@@ -28,8 +28,8 @@ const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 
 /*============= MAIN INFO =============*/
-global.owner = [['6283115862272', 'ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻', true]]  // ubah pake no kalian
-global.mods = []
+global.owner = [['6283115862272', 'ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻', true], ['6285718523404', 'Developer' true]]  // ubah pake no kalian
+global.mods = ['6283115862272']
 global.prems = ['6283115862272']
 global.nomorbot = '6282315950966' // ubah pake no kalian
 global.nomorown = '6283115862272'// ubah pake no kalian
@@ -50,12 +50,13 @@ global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 
 //*============= SOSMED =============*/
-global.sig = '-'
-global.sgh = '-'
-global.sgc = '_'
+global.sig = 'https://www.instagram.com/ardi_procet28'
+global.sgh = 'https://github.com/ArdikaOfc'
+global.sgc = 'https://whatsapp.com/channel/0029VaF9C4zId7nOTFF8ZK0v'
+global.gc = 'https://chat.whatsapp.com/ITDnYU2kXuj97Gb2Xw8yzQ'
 global.sgw = '_'
 global.sdc = '-'
-global.sfb = '-'
+global.sfb = 'https://www.facebook.com/share/18LYDGk9si/'
 global.snh = '-'
 
 // ================= Cpanel ========================================
