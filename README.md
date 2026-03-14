@@ -26,7 +26,7 @@ Bot WhatsApp Multifungsi | Base dari **Nao MD** | Full **Plugins ESM**
 
 ## 💾 Info Bot
 👉🏻 Link sama nomer bot ada di grup bot:
-[Klik di sini untuk join]([https://whatsapp.com/channel/0029VaF9C4zId7nOTFF8ZK0v](https://chat.whatsapp.com/ITDnYU2kXuj97Gb2Xw8yzQ))
+[Klik di sini untuk join](https://chat.whatsapp.com/ITDnYU2kXuj97Gb2Xw8yzQ)
 
 ---
 
