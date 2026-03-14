@@ -34,7 +34,7 @@ handler.before = async function (m, { match, usedPrefix }) {
                  `_ᴋᴇᴍɪʀɪᴘᴀɴ: ${similarityPercentage}%_`
 
       await this.sendMessage(m.chat, {
-    image: fs.readFileSync('./media/zeta2.jpg'),
+    image: fs.readFileSync('./media/botdj2.jpg'),
     caption,
     footer: 'ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻',
     buttons: [
@@ -50,7 +50,7 @@ handler.before = async function (m, { match, usedPrefix }) {
       externalAdReply: {
         title: 'BOTZ DJ WhatsApp Bot',
         body: 'Simple • Fast • Multifungsi',
-        thumbnail: fs.readFileSync('./media/zeta1.jpg'),
+        thumbnail: fs.readFileSync('./media/botdj1.jpg'),
         sourceUrl: 'https://t.me/Allenkujou',
         mediaType: 1,
         renderLargerThumbnail: true
