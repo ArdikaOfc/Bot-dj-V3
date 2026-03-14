@@ -14,7 +14,7 @@ _• Limit  : %limit_
 ────────────────
 
 ───〔 *BOT INFO* 〕───
-_• Nama   : Vestia Zeta MD_
+_• Nama   : ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻_
 _• Prefix : %_p_
 _• Uptime : %uptime_
 _• DB     : %rtotalreg / %totalreg_
@@ -27,7 +27,7 @@ _• DB     : %rtotalreg / %totalreg_
   header: `╔══〔 *%category* 〕───⬡`,
   body: `║ ⬡ %cmd %isPremium %islimit`,
   footer: `╚════════════════⬡\n`,
-  after: `_Terima kasih sudah menggunakan Vestia Zeta MD_`,
+  after: `_Terima kasih sudah menggunakan ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻_`,
 }
 
 let handler = async (m, { conn, usedPrefix: _p }) => {
@@ -150,9 +150,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
         mentions: [m.sender],
         contextInfo: {
           externalAdReply: {
-            title: '✨ Vestia Zeta MD',
+            title: '✨ ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻',
             body: 'Pilih kategori fitur yang ingin kamu pakai 💫',
-            thumbnail: fs.readFileSync('./media/zeta1.jpg'),
+            thumbnail: fs.readFileSync('./media/botdj1.jpg'),
             mediaType: 1,
             renderLargerThumbnail: true,
             sourceUrl: '-'
@@ -182,4 +182,4 @@ function clockString(ms) {
   let m = Math.floor(ms / 60000) % 60
   let s = Math.floor(ms / 1000) % 60
   return `${h}j ${m}m ${s}s`
-}
+      }
