@@ -34,7 +34,7 @@ global.prems = ['6283115862272']
 global.nomorbot = '6282315950966' // ubah pake no kalian
 global.nomorown = '6283115862272'// ubah pake no kalian
 global.autotyping = true // default mati
-global.autorecording = false // default mati
+global.autorecording = true // default mati
 
 /*============= WATERMARK =============*/
 global.readMore = readMore
