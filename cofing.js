@@ -1,6 +1,6 @@
 /*
-Base : Elaina-MultiDevice
-Release : 22 Nov 2022
+Base : ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻
+Release : 14 Mar 2026
 */
 
 import { watchFile, unwatchFile } from 'fs'
@@ -28,7 +28,7 @@ const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 
 /*============= MAIN INFO =============*/
-global.owner = [['6283115862272', 'ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻', true], ['6285718523404', 'Developer' true]]  // ubah pake no kalian
+global.owner = [['6283115862272', 'ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻', true], ['6285718523404', 'Developer', true]]  // ubah pake no kalian
 global.mods = ['6283115862272']
 global.prems = ['6283115862272']
 global.nomorbot = '6282315950966' // ubah pake no kalian
