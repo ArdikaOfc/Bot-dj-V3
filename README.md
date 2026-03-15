@@ -35,7 +35,7 @@ Bot WhatsApp Multifungsi | Base dari **Nao MD** | Full **Plugins ESM**
 - 🤝 *Bantu share*
 - Reupload diperbolehkan asal cantumkan credit
 - Script no enc chat me:    
-  [Klik di sini untuk join](https://wa.me/6283115862272)
+  [Klik di sini untuk chat creator](https://wa.me/6283115862272)
 
 ---
 
