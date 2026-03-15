@@ -24,7 +24,7 @@ let handler = async (m, { conn }) => {
 
   await conn.sendMessage(m.chat, {
     text:
-`🌸 *R U N T I M E  S T A T U S* 🌸
+`👾 *R U N T I M E  S T A T U S* 👾
 
 ⏳ *Active Time:*
 ${muptime}
@@ -32,11 +32,11 @@ ${muptime}
 💬 *Anime Quote:*
 _${quote}_
 
-🍭 Powered by *Vestia Zeta Multi Device*`,
+🍭 Powered by *Dj Botz Multi Device*`,
 
     contextInfo: {
       externalAdReply: {
-        title: 'Vestia Zeta MD — Runtime Status',
+        title: 'ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻ — Runtime Status',
         body: 'Bot is running smoothly!',
         mediaType: 1,
         thumbnail: fs.readFileSync('./media/thumbnail.jpg'),
