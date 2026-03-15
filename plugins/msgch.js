@@ -3,7 +3,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     let who = m.sender;
     let url = await conn.profilePictureUrl(who, 'image').catch(() => null);
-    let idch = '120363407318005025@newsletter'; // ISI IDCHNYA DI SINI
+    let idch = '120363199397739684@newsletter'; // ISI IDCHNYA DI SINI
 
     let username = conn.getName(who);
     await conn.sendMessage(m.chat, { react: { text: "⏳", key: m.key } });
