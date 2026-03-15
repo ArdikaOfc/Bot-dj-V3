@@ -48,6 +48,8 @@ global.stickpack = `${namebot}\n\nᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻\n
 global.stickauth = `Made By ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻`
 global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
+global.loading = (m, conn, back = false) => {
+}
 
 //*============= SOSMED =============*/
 global.sig = 'https://www.instagram.com/ardi_procet28'
