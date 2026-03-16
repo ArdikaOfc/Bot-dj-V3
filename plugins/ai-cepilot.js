@@ -1,14 +1,14 @@
 // • Feature : Copilot AI
-// • Source  : https://api.nekolabs.my.id
+// • Source  : https://rynekoo-api.hf.space/
 // • Plugins ESM
-// • Author Hilman 
+// • Author ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻ 
 import fetch from 'node-fetch'
 
 let handler = async (m, { text, usedPrefix, command }) => {
   if (!text) throw `🧀 Contoh: ${usedPrefix + command} Apa itu bot wa`
 
   try {
-    let res = await fetch(`https://api.nekolabs.my.id/ai/copilot?text=${encodeURIComponent(text)}`)
+    let res = await fetch(`https://rynekoo-api.hf.space/text-generation/copilot?text=${encodeURIComponent(text)}`)
     if (!res.ok) throw await res.text()
     let json = await res.json()
     if (!json.status) throw `❌ Gagal mendapatkan respon dari Copilot AI.`
