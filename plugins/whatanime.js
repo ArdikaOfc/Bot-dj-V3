@@ -1,7 +1,7 @@
 // • What Anime 
 // • Type : Plugins ESM 
 // • API : https://api.deline.my.id
-// • Author: Hilman
+// • Author: ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻
 import fetch from "node-fetch";
 import FormData from "form-data";
 
@@ -11,11 +11,11 @@ let handler = async (m, { conn, usedPrefix, command }) => {
       participant: '0@s.whatsapp.net',
       remoteJid: 'status@broadcast',
       fromMe: false,
-      id: 'RyoYamada'
+      id: 'Botz Dj'
     },
     message: {
       locationMessage: {
-        name: `✨ Ryo Sedang Menganalisis Gambar Anime...`,
+        name: `✨ Dj Sedang Menganalisis Gambar Anime...`,
         jpegThumbnail: ''
       }
     }
@@ -35,7 +35,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 \`\`\`${usedPrefix + command}\`\`\`
 Kirim atau reply *gambar anime* untuk diidentifikasi.
 ━━━━━━━━━━━━━━━━
-💡 *Ryo akan mencari tahu dari scene yang kamu kirim!*`,
+💡 *Dj akan mencari tahu dari scene yang kamu kirim!*`,
     }, { quoted: fkontak });
   }
 
@@ -67,7 +67,7 @@ ${data.description || '-'}
 🔗 *Referensi:*
 ${data.references?.map(v => `• ${v}`).join('\n') || '-'}
 ━━━━━━━━━━━━━━━━
-✨ *Analisis selesai — Ryo berhasil menemukan data anime ini!*`;
+✨ *Analisis selesai — Dj berhasil menemukan data anime ini!*`;
 
     await conn.sendMessage(m.chat, {
       text: caption,
