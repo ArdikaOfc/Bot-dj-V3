@@ -13,7 +13,7 @@ let handler = async (m, { conn, text, command }) => {
   try {
     if (!text) return m.reply(`Masukkan judul lagu!\n\nContoh:\n.${command} dj 30 detik`)
 
-    const res = await fetch(`https://api.nekolabs.my.id/downloader/youtube/play/v1?q=${encodeURIComponent(text)}`)
+    const res = await fetch(`https://rynekoo-api.hf.space/downloader/youtube/play/v1?q=${encodeURIComponent(text)}`)
     const json = await res.json()
     if (!json.success || !json.result?.downloadUrl) throw new Error('Gagal mengambil data dari API.')
 
