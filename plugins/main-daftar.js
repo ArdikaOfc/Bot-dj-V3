@@ -1,14 +1,15 @@
 /*
-✨ YuriPuki
-💫 Nama Fitur: Daftar
-🤖 Type : Plugin ESM
-🔗 Sumber : https://whatsapp.com/channel/0029VbATaq46BIErAvF4mv2c
+Wm: https://whatsapp.com/channel/0029VaF9C4zId7nOTFF8ZK0v
+Jgn hapus wm ku
+Fitur:  Register/Daftar 
+Type : Plugins Esm 
+Creator: ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻
 */
 
 import { createHash } from 'crypto'
 import moment from 'moment-timezone'
 
-let Reg = /^([\w\s]+),(\d{1,3})$/i
+let Reg = /^([\w\s]+).(\d{1,3})$/i
 
 let handler = async function (m, { text, usedPrefix, command, conn }) {
   let d = new Date(new Date() + 3600000)
@@ -25,7 +26,7 @@ let handler = async function (m, { text, usedPrefix, command, conn }) {
 
   if (!Reg.test(text)) {
     return m.reply(
-      `Ketik dengan format:\n\n${usedPrefix + command} namamu,umurmu\n\nContoh:\n${usedPrefix + command} allen,16`
+      `Ketik dengan format:\n\n${usedPrefix + command} namamu.umurmu\n\nContoh:\n${usedPrefix + command} ArdikaOfc.20`
     )
   }
 
@@ -34,7 +35,7 @@ let handler = async function (m, { text, usedPrefix, command, conn }) {
 
   if (!name || !age) return m.reply('*Nama atau umur tidak valid!*')
   if (name.length > 100) return m.reply('Nama maksimal 100 karakter.')
-  if (age < 5 || age > 100) return m.reply('Umur harus antara 5 - 100 tahun.')
+  if (age < 13 || age > 100) return m.reply('Umur harus antara 13 - 100 tahun.')
 
   user.name = name.trim()
   user.age = age
@@ -70,9 +71,9 @@ Semoga harimu menyenangkan~!
       ],
       contextInfo: {
         externalAdReply: {
-          title: 'VESTIA ZETA MULTI DEVICE',
+          title: 'ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻',
           body: '',
-          thumbnailUrl: 'https://files.cloudkuimages.guru/images/3d592f58d437.jpeg',
+          thumbnailUrl: 'https://raw.githubusercontent.com/ArdikaOfc/Database/main/uploads/4990a6-1773646647303.jpg',
           mediaType: 1,
           previewType: 'PHOTO',
           renderLargerThumbnail: true,
