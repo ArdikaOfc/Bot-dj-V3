@@ -118,7 +118,7 @@ textRes = '```' + textRes + '```'
 
 handler.help = ['leaderboard <uang|limit|xp>']
 handler.tags = ['game']
-handler.command = /^leaderboard$/i
+handler.command = /^leaderboard|lb$/i
 handler.register = true
 
 export default handler
