@@ -23,7 +23,7 @@ let handler = async (m, { conn }) => {
     text: caption,
     contextInfo: {
       externalAdReply: {
-        title: "Vestia Zeta MD",
+        title: "ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻",
         body: "Bot Status",
         thumbnail,
         mediaType: 1,
