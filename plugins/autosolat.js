@@ -35,7 +35,7 @@ export async function before(m) {
         mentions: [who],
         contextInfo: {
           externalAdReply: {
-            title: "VESTIA ZETA MULTI DEVICE",
+            title: "ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻",
             body: `Pengingat Sholat ${sholat}`,
             thumbnailurl: "https://files.cloudkuimages.guru/images/39063b335d1b.jpeg",
             mediaType: 1,
