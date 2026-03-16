@@ -1,8 +1,8 @@
 let handler = async (m) => {
   let ryo = `
-*「 🍬 Vestia zeta」*
+*「 🍬 ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻」*
 
-Hmph... apa sih, manggil-manggil Zeta segala...  
+Hmph... apa sih, manggil-manggil Bot Dj segala...  
 Yasudah, kalau kamu *beneran* butuh, ketik aja *.menu* ✨  
 
 (Tapi jangan ganggu aku lagi ya...) 
@@ -10,7 +10,7 @@ Yasudah, kalau kamu *beneran* butuh, ketik aja *.menu* ✨
   await m.reply(ryo)
 }
 
-handler.customPrefix = /^(tes|bot|zeta|zetabot|test)$/i
+handler.customPrefix = /^(tes|bot|dj|djbot|test)$/i
 handler.command = new RegExp
 
 export default handler
