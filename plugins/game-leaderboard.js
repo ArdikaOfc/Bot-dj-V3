@@ -102,7 +102,7 @@ textRes = '```' + textRes + '```'
       mentions: top.map(u => u.jid),
       contextInfo: {
         externalAdReply: {
-          title: 'VESTIA ZETA MULTI DEVICE',
+          title: 'ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻',
           body: bodyAd,
           thumbnailUrl: 'https://files.cloudkuimages.guru/images/4c70abcb66ee.jpeg',
           mediaType: 1,
