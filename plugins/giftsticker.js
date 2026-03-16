@@ -77,7 +77,7 @@ const handler = async (m, { conn, text }) => {
             try {
                 const sticker = new Sticker(item.gif, {
                     pack: `${query}`,
-                    author: 'Hilman XD',
+                    author: 'ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻',
                     type: 'full',
                     quality: 70
                 });
