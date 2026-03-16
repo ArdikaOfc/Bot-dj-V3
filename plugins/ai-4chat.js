@@ -1,14 +1,14 @@
 // • Feature : ai4chat
-// • Source : https://api.nekolabs.my.id
+// • Source : https://rynekoo-api.hf.space
 // • Plugins ESM 
-// • Author Hilman 
+// • Author ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻ 
 import fetch from 'node-fetch'
 
 let handler = async (m, { text, usedPrefix, command }) => {
   if (!text) throw `🧀 Contoh: ${usedPrefix + command} Apa itu bot wa`
 
   try {
-    let api = `https://api.nekolabs.my.id/ai/ai4chat?text=${encodeURIComponent(text)}`
+    let api = `https://rynekoo-api.hf.space/ai/ai4chat?text=${encodeURIComponent(text)}`
     let res = await fetch(api)
     if (!res.ok) throw await res.text()
     let json = await res.json()
