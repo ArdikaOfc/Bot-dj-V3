@@ -50,7 +50,7 @@ let handler = async (m, { conn }) => {
     text: caption,
     contextInfo: {
       externalAdReply: {
-        title: "ZETA-MD SYSTEM",
+        title: "ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻ SYSTEM",
         body: `Uptime: ${uptimeBot}`,
         thumbnailUrl: "https://files.cloudkuimages.guru/images/1379bdf28569.jpeg", 
         sourceUrl: "",
