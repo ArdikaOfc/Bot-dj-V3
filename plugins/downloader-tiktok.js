@@ -67,5 +67,7 @@ const handler = async (m, { conn, text }) => {
 handler.help = ['tt', 'tiktok', 'ttdl', 'tiktokdl'];
 handler.tags = ['downloader']
 handler.command = ['tt', 'tiktok', 'ttdl', 'tiktokdl'];
+handler.limit = true
+handler.register = true
 
 export default handler;
