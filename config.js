@@ -99,8 +99,8 @@ global.htjava = '⫹⫺'    //hiasan Doang :v
 global.hsquere = ['⛶', '❏', '⫹⫺']
 
 /*bikin project dan ambil apikeyny di pakasir.com*/
-global.pakasir_project = "allen-store"
-global.pakasir_api_key = "Sja4XrXODqaldYrmJzYQaeyL7WA05hOL"
+global.pakasir_project = "ardikaofc"
+global.pakasir_api_key = "zP1BsjFpmEKoRyDiQNlpy7NQUisZmwWv"
 
 /*============= RESPON =============*/
 global.wait = 'Please Wait...'
