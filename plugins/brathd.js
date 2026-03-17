@@ -16,8 +16,8 @@ let handler = async (m, { conn, text }) => {
         let stiker = await createSticker(
             false,
             response,
-            "Sticker",
-            "Ryo Yamada - MD",
+            "Sticker by: ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻",
+            "Creator: ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻",
             10
         )
 
