@@ -15,8 +15,8 @@ let handler = async (m, { conn, args }) => {
 
     const stickerBuffer = await createSticker(buffer, {
       type: StickerTypes.FULL,
-      pack: 'Sticker',
-      author: 'Ryo Yamada - MD',
+      pack: global.stickpack,
+      author: global.stickauth,
       categories: ['✨'],
       id: '.',
       quality: 70,
