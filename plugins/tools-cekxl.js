@@ -64,7 +64,7 @@ Expired : ${pkg.expiry}`;
     await conn.reply(m.chat, caption, m);
 
   } catch (e) {
-    global.logger.error(e);
+        console.error(e)
     m.reply(`❌ Error: ${e.message}`);
   } finally {
     await global.loading(m, conn, true);
