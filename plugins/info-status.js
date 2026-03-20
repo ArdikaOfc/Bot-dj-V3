@@ -10,7 +10,7 @@ const execAsync = promisify(exec);
 const MAX_HISTORY_POINTS = 60;
 let pingHistory = [];
 
-const tempDir = './temp';
+const tempDir = './tmp';
 
 const ensureTempDir = () => {
     if (!fs.existsSync(tempDir)) {
