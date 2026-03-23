@@ -43,7 +43,7 @@ async function sendPinterestImage(m, conn, query, usedPrefix) {
     await conn.sendMessage(m.chat, {
       image: { url: random.images["736x"].url },
       caption,
-      footer: 'Vestia Zeta - MD',
+      footer: 'ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻',
       buttons: [
         { buttonId: `${usedPrefix}lagi`, buttonText: { displayText: '🔄 Lagi' }, type: 1 }
       ],
