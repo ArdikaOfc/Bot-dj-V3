@@ -35,7 +35,7 @@ let handler = async (m, { conn, participants, isAdmin, isBotAdmin }) => {
   }
 
   if (sukses > 0) {
-    await conn.reply(m.chat, '🎀 *yeyy,zeta berhasil promote user tersebut*', m)
+    await conn.reply(m.chat, '🎀 *yeyy,bot dj berhasil promote user tersebut*', m)
   } else {
     await conn.reply(m.chat, '❌ Tidak ada user yang bisa dipromote', m)
   }
