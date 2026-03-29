@@ -35,7 +35,7 @@ let handler = async (m, { conn, participants, isAdmin, isBotAdmin }) => {
   }
 
   if (sukses > 0) {
-    await conn.reply(m.chat, '✨ *zeta berhasil demote*', m)
+    await conn.reply(m.chat, '✨ *Dj botz berhasil demote*', m)
   } else {
     await conn.reply(m.chat, '❌ Tidak ada admin yang bisa didemote', m)
   }
