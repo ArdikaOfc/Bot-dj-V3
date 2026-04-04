@@ -1,151 +1,70 @@
-/* 
-• Plugin: YouTube Video Downloader (ytv only)
-• Sumber scape : https://whatsapp.com/channel/0029Vb5EZCjIiRotHCI1213L/377
-*/
+import fetch from 'node-fetch';
 
-import fetch from 'node-fetch'
-import { Buffer } from 'buffer'
-
-class Youtubers {
-  constructor() {
-    this.hex = "C5D58EF67A7584E4A29F6C35BBC4EB12"
-  }
-
-  async uint8(hex) {
-    const pecahan = hex.match(/[\dA-F]{2}/gi)
-    if (!pecahan) throw new Error("Format tidak valid")
-    return new Uint8Array(pecahan.map(h => parseInt(h, 16)))
-  }
-
-  b64Byte(b64) {
-    const bersih = b64.replace(/\s/g, "")
-    const biner = Buffer.from(bersih, 'base64')
-    return new Uint8Array(biner)
-  }
-
-  async key() {
-    const raw = await this.uint8(this.hex)
-    return await crypto.subtle.importKey("raw", raw, { name: "AES-CBC" }, false, ["decrypt"])
-  }
-
-  async Data(base64Terenkripsi) {
-    const byteData = this.b64Byte(base64Terenkripsi)
-    if (byteData.length < 16) throw new Error("Data terlalu pendek")
-
-    const iv = byteData.slice(0, 16)
-    const data = byteData.slice(16)
-
-    const kunci = await this.key()
-    const hasil = await crypto.subtle.decrypt({ name: "AES-CBC", iv }, kunci, data)
-
-    const teks = new TextDecoder().decode(new Uint8Array(hasil))
-    return JSON.parse(teks)
-  }
-
-  async getCDN() {
-    let retries = 5
-    while (retries--) {
-      try {
-        const res = await fetch("https://media.savetube.me/api/random-cdn")
-        const data = await res.json()
-        if (data?.cdn) return data.cdn
-      } catch {}
-    }
-    throw new Error("Gagal ambil CDN setelah 5 percobaan")
-  }
-
-  async infoVideo(linkYoutube) {
-    const cdn = await this.getCDN()
-    const res = await fetch(`https://${cdn}/v2/info`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url: linkYoutube }),
-    })
-
-    const hasil = await res.json()
-    if (!hasil.status) throw new Error(hasil.message || "Gagal ambil data video")
-
-    const isi = await this.Data(hasil.data)
-    return {
-      judul: isi.title,
-      durasi: isi.durationLabel,
-      thumbnail: isi.thumbnail,
-      kode: isi.key
-    }
-  }
-
-  async getDownloadLink(kodeVideo, kualitas) {
-    let retries = 5
-    while (retries--) {
-      try {
-        const cdn = await this.getCDN()
-        const res = await fetch(`https://${cdn}/download`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            downloadType: 'video',
-            quality: kualitas,
-            key: kodeVideo,
-          }),
-        })
-
-        const json = await res.json()
-        if (json?.status && json?.data?.downloadUrl) {
-          return json.data.downloadUrl
-        }
-      } catch {}
-    }
-    throw new Error("Gagal ambil link unduh setelah 5 percobaan")
-  }
-
-  async downloadVideo(linkYoutube, kualitas = '360') {
-    try {
-      const data = await this.infoVideo(linkYoutube)
-      const linkUnduh = await this.getDownloadLink(data.kode, kualitas)
-      return {
-        status: true,
-        judul: data.judul,
-        durasi: data.durasi,
-        url: linkUnduh,
-      }
-    } catch (err) {
-      return {
-        status: false,
-        pesan: err.message
-      }
-    }
-  }
-}
-
-let handler = async (m, { text, conn }) => {
-  if (!text) return m.reply(`Contoh:\n.ytv https://youtu.be/xxxx [360]`)
-
-  const yt = new Youtubers()
-  const [link, kualitasArg] = text.trim().split(' ')
-  const kualitas = kualitasArg?.replace(/[^0-9]/g, '') || '360'
-
-  m.reply(`⏳ Mengambil video YouTube...`)
+const handler = async (m, { conn, args, usedPrefix, command }) => {
+  if (!args[0]) return m.reply(`Contoh penggunaan: ${usedPrefix + command} https://youtu.be/xxxx`);
+  if (!args[0].match(/youtu\.be|youtube\.com/i)) return m.reply('URL YouTube tidak valid!');
 
   try {
-    const res = await yt.downloadVideo(link, kualitas)
-    if (!res.status) throw res.pesan
+    await m.reply('Wait a moment ');
+    
+    const headers = {
+      "accept": "*/*",
+      "accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7",
+      "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\"",
+      "sec-ch-ua-mobile": "?1",
+      "sec-ch-ua-platform": "\"Android\"",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "cross-site",
+      "Referer": "https://id.ytmp3.mobi/",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    };
 
-    const caption = `✅ *Berhasil!*\n\n🎬 *Judul:* ${res.judul}\n🕒 *Durasi:* ${res.durasi}\n📽️ *Kualitas:* ${kualitas}p`
+    const initial = await fetch(`https://d.ymcdn.org/api/v1/init?p=y&23=1llum1n471&_=${Math.random()}`, { headers });
+    const init = await initial.json();
+    
+    const id = args[0].match(/(?:youtu\.be\/|youtube\.com\/(?:.*v=|.*\/|.*embed\/))([^&?/]+)/)?.[1];
+    if (!id) throw new Error('Gagal mendapatkan ID video');
+    
+    const convertURL = init.convertURL + `&v=${id}&f=mp4&_=${Math.random()}`;
+    const converts = await fetch(convertURL, { headers });
+    const convert = await converts.json();
+    
+    let info = {};
+    for (let i = 0; i < 5; i++) {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      const progressRes = await fetch(convert.progressURL, { headers });
+      info = await progressRes.json();
+      if (info.progress === 3) break;
+    }
+    
+    if (!info.title || !convert.downloadURL) throw new Error('Konversi gagal');
+    
+    await conn.sendMessage(
+      m.chat, 
+      {
+        video: { url: convert.downloadURL },
+        caption: `Judul: ${info.title}`,
+        ptv: false
+      },
+      { quoted: m }
+    );
 
-    await conn.sendMessage(m.chat, {
-      video: { url: res.url },
-      caption,
-      fileName: res.judul + '.mp4',
-      mimetype: 'video/mp4'
-    }, { quoted: m })
-  } catch (e) {
-    m.reply(`❌ Gagal:\n${e.message || e}`)
+    await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
+
+  } catch (error) {
+    console.error(error);
+    await m.reply(`Error: ${error.message}`);
+
+    await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key } })
   }
-}
+};
 
-handler.help = ['ytv <url> [360]', 'ytmp4 <url> [360]', 'videoyt <url> [360]']
+handler.help = ['ytmp4 <url>'];
+handler.command = /^yt(video|v|mp4)|videoyt$/i;
 handler.tags = ['downloader']
-handler.command = /^(ytv|ytmp4|videoyt)$/i
+
 handler.limit = true
+handler.register = true
 
 export default handler
