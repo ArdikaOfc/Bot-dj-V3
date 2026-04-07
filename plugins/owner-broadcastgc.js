@@ -15,7 +15,7 @@ const handler = async (m, { conn, text, quoted, mime, prefix, command }) => {
       remoteJid: "status@broadcast"
     },
     message: {
-      conversation: "RYO YAMADA - MD"
+      conversation: "ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻"
     }
   };
 
