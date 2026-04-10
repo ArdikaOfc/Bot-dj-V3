@@ -4,7 +4,7 @@ let handler = async (m, { conn }) => {
   try {
     await conn.sendMessage(m.chat, { react: { text: '👀', key: m.key } })
 
-    const res = await fetch('https://api.nekolabs.my.id/random/waifuim/maid')
+    const res = await fetch('https://rynekoo-api.hf.space/random/waifuim?type=maid')
     const buffer = await res.buffer()
     const contentType = res.headers.get('content-type') || ''
 
