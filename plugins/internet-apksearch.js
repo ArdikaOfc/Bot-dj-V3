@@ -2,7 +2,7 @@
 • fitur : Android App Search (Share All)
 • type : plugins esm
 • API : https://api.nekolabs.my.id
-• author : hilman
+• Creator : ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻
 */
 import fetch from 'node-fetch'
 
@@ -11,7 +11,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
   try {
     const query = encodeURIComponent(args.join(' '))
-    const res = await fetch(`https://api.nekolabs.my.id/discovery/android1/search?q=${query}`)
+    const res = await fetch(`https://rynekoo-api.hf.space/discovery/android1/search?q=${query}`)
     const json = await res.json()
 
     if (!json.status || !json.result || json.result.length === 0) throw '🍬 Aplikasi tidak ditemukan'
