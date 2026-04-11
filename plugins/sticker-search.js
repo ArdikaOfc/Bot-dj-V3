@@ -51,7 +51,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
 
 handler.help = ['stickersearch <query>']
 handler.tags = ['sticker']
-handler.command = /^stickersearch$/i
+handler.command = /^stickersearch|sticker-s$/i
 handler.limit = true
 
 export default handler
