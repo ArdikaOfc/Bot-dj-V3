@@ -45,7 +45,7 @@ let handler = async (m, { conn, text }) => {
 
 handler.help = ['groupsearch <kata kunci>']
 handler.tags = ['internet', 'premium']
-handler.command = ['groupsearch']
+handler.command = ['groupsearch','gcsearch']
 handler.premium = true
 
 export default handler
