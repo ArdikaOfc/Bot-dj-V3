@@ -1,7 +1,8 @@
 /*• Nama Fitur : Play
 • Type : Plugin ESM
-• Link Channel : https://whatsapp.com/channel/0029VbB8WYS4CrfhJCelw33j
-• Author : Agas
+• Link Channel : https://whatsapp.com/channel/0029VaF9C4zId7nOTFF8ZK0v
+• Creator : ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻
+• Contact : 083115862272
 */
 
 import axios from "axios";
@@ -9,26 +10,25 @@ import axios from "axios";
 const handler = async (m, { conn, usedPrefix, text, command }) => {
   if (!text)
     return m.reply(
-      `Ketikkan judul lagu\nContoh: ${usedPrefix + command} kau masih kekasihku`
+      `Ketikkan judul lagu\nContoh: ${usedPrefix + command} Dj jangan tunggu lama lama`
     );
 
   await conn.sendMessage(m.chat, { react: { text: "⏳", key: m.key } });
 
   try {
     const res = await axios.get(
-      `https://api.deline.web.id/downloader/ytplay?q=${encodeURIComponent(text)}`,
+      `https://api-faa.my.id/faa/ytplay?query=${encodeURIComponent(text)}`,
       { timeout: 30000 }
     );
 
     if (!res.data?.status || !res.data?.result)
       throw new Error("Gagal mengambil data dari API.");
 
-    const { url, title, thumbnail, pick, dlink } = res.data.result;
+    const { url, title, thumbnail, duration_timestamp, mp3 } = res.data.result;
 
     const caption = `⬣─ 〔 *Y T - A U D I O* 〕 ─⬣
 - *Title:* ${title}
-- *Quality:* ${pick?.quality || "N/A"}
-- *Size:* ${pick?.size || "N/A"}
+- *Duration:* ${duration_timestamp}
 - *YouTube:* ${url}
 ⬣────────────────⬣`;
 
@@ -54,7 +54,7 @@ const handler = async (m, { conn, usedPrefix, text, command }) => {
     await conn.sendMessage(
       m.chat,
       {
-        audio: { url: dlink },
+        audio: { url: mp3 },
         mimetype: "audio/mp4",
         fileName: `${title}.mp3`,
       },
@@ -76,5 +76,7 @@ const handler = async (m, { conn, usedPrefix, text, command }) => {
 handler.help = ["play2"];
 handler.tags = ["downloader"];
 handler.command = ['play2']
+handler.limit = true
+handler.register = true
 
 export default handler;
