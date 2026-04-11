@@ -1,3 +1,12 @@
+/*
+Wm: https://whatsapp.com/channel/0029VaF9C4zId7nOTFF8ZK0v
+Jgn hapus wm ku
+Fitur:  Request (kirim ke channel dan owner)
+Type : Plugins Esm 
+Api: https://www.veloria.my.id/
+Creator: ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻
+*/
+
 let handler = async (m, { args, conn }) => {
   if (!args[0]) return m.reply('Contoh: .req Anu Ini Min')
   let text = args.join(' ')
