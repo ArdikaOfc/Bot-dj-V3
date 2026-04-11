@@ -4,11 +4,11 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text.includes('|')) throw `Masukkan title dan text dipisahkan dengan "|"\n\nContoh:\n${usedPrefix + command} Anonymous Chat|haii bang`;
 
   let [title, teks] = text.split('|').map(s => s.trim());
-  if (!title || !teks) throw `Masukkan title dan text yang valid!\n\nContoh:\n${usedPrefix + command} Anonymous Chat|haii bang`;
+  if (!title || !teks) throw title dan text yang valid!\n\nContoh:\n${usedPrefix + command} Anonymous Chat|haii bang`;
 
   let loading = await m.reply('Tunggu sebentar kak, sedang diproses...');
 
-  let api = `https://flowfalcon.dpdns.org/imagecreator/ngl?title=${encodeURIComponent(title)}&text=${encodeURIComponent(teks)}`;
+  let api = `https://www.veloria.my.id/imagecreator/fakengl?text=${encodeURIComponent(teks)}&title=${encodeURIComponent(title)}`;
 
   try {
     let res = await fetch(api);
@@ -27,5 +27,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 handler.command = /^ngl$/i;
 handler.help = ['ngl <title>|<text>'];
 handler.tags = ['maker'];
+handler.limit = true
+handler.register = true
 
 export default handler;
