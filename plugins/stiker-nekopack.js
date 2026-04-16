@@ -24,8 +24,8 @@ let handler = async (m, { conn, command }) => {
   let url = data.url
 
   let stiker = new Sticker(url, {
-    pack: 'Vestia Zeta - MD',
-    author: 'by allen',
+    pack: 'ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻',
+    author: 'by ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻',
     type: 'full',
     categories: ['Anime'],
     id: command,
