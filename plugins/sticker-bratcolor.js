@@ -18,7 +18,7 @@ let handler = async (m, { conn, args, text, command }) => {
   }
 
   let [isi, col] = text.split('|').map(v => v.trim())
-  teks = isi || 'halo hilman'
+  teks = isi || 'halo ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻'
   warna = col.toLowerCase() || 'navy'
 
   if (!warnaList.includes(warna)) {
@@ -32,7 +32,7 @@ let handler = async (m, { conn, args, text, command }) => {
     let res = await fetch(api)
     let buffer = await res.buffer()
 
-    let stiker = await sticker3(buffer, false, 'Ryo Yamada - MD', 'By Hilman')
+    let stiker = await sticker3(buffer, false, 'ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻, 'By ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻')
     await conn.sendMessage(m.chat, { sticker: stiker }, { quoted: m })
     if (conn.react) await conn.react(m.chat, '✅', m.key)
 
