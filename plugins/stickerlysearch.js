@@ -1,8 +1,8 @@
 /*
 • fitur : Stickerly Search
 • type : plugins esm 
-• API : https://api.nekolabs.my.id
-• author : hilman
+• API : https://rynekoo-api.hf.space/
+• author : ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻
 */
 
 import axios from 'axios'
@@ -11,7 +11,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) throw `Contoh: ${usedPrefix + command} nahida`
 
   try {
-    let res = await axios.get(`https://api.nekolabs.my.id/discovery/stickerly/search?q=${encodeURIComponent(text)}`)
+    let res = await axios.get(`https://rynekoo-api.hf.space/discovery/stickerly/search?q=${encodeURIComponent(text)}`)
     let data = res.data.result
 
     if (!data || data.length === 0) throw `❌ Tidak ada hasil untuk *${text}*`
@@ -38,5 +38,6 @@ handler.help = ['stickerlysearch <query>']
 handler.tags = ['sticker']
 handler.command = /^(stickerlysearch|stickerly2)$/i
 handler.limit = false
+handler.register = true
 
 export default handler
