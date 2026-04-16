@@ -1,8 +1,8 @@
 /*
 • fitur : Sticker.ly to WA Sticker (Delay 3 detik)
 • type : plugins esm
-• API : https://api.nekolabs.my.id
-• author : hilman
+• API : https://rynekoo-api.hf.space/
+• author : ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻
 */
 
 import fetch from 'node-fetch'
@@ -15,7 +15,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     const urlSticker = encodeURIComponent(args[0])
     const delaySec = 3
 
-    const res = await fetch(`https://api.nekolabs.my.id/discovery/stickerly/detail?url=${urlSticker}`)
+    const res = await fetch(`https://rynekoo-api.hf.space/discovery/stickerly/detail?url=${urlSticker}`)
     const json = await res.json()
     if (!json.status || !json.result) throw '⚠️ Gagal mengambil data sticker'
 
@@ -28,7 +28,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     for (let s of stickers) {
       const sticker = new Sticker(s.imageUrl, {
         pack: pack.name,
-        author: 'By Hilman',
+        author: 'By ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻',
         type: 'full',
         categories: ['😏'],
       })
@@ -48,5 +48,6 @@ handler.help = ['stickerly <link>']
 handler.tags = ['sticker']
 handler.command = /^(stickerly|stickerdownload)$/i
 handler.limit = 2
+handler.register = true
 
 export default handler
