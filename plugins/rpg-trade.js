@@ -48,7 +48,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       externalAdReply: {
         title: "DJBOTZ TRADE",
         body: "Transaksi Berhasil",
-        thumbnailUrl: 'https://files.cloudkuimages.guru/images/bbc63933dd81.jpeg',
+        thumbnailUrl: 'https://github.com/ArdikaOfc/Bot-dj-V3/blob/main/thumbnail.jpg',
         mediaType: 1,
         renderLargerThumbnail: true
       }
@@ -59,5 +59,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 handler.help = ['trade']
 handler.tags = ['rpg']
 handler.command = ['trade']
+handler.register = true
 
 export default handler
