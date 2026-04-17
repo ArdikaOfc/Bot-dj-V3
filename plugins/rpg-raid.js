@@ -27,7 +27,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   ]
 
   if (!text) {
-    let menu = `*───「 ZETA RAID SYSTEM 」───*\n\n`
+    let menu = `*───「 DJBOTZ RAID SYSTEM 」───*\n\n`
     menu += `⚔️ *${usedPrefix}${command} attack* (Serang)\n`
     menu += `👾 *${usedPrefix}${command} spawn* (Panggil Boss)\n\n`
     
