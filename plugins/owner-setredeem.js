@@ -10,7 +10,7 @@ let handler = async (m, { args, isOwner }) => {
       `Gunakan format:\n` +
       `*.setredeem* <kode> <uang> <xp> <limit> <kuota> <durasi>\n\n` +
       `*Keterangan Durasi:* d (hari), h (jam), m (menit)\n` +
-      `*Contoh:* .setredeem ALLEN 5000 100 5 50 24h`
+      `*Contoh:* .setredeem ARDIKAOFC 5000 100 5 50 24h`
     )
   }
 
