@@ -32,7 +32,7 @@ let handler = async (m, { conn }) => {
     .sort((a, b) => (wdb.users[b].rpg.diamond || 0) - (wdb.users[a].rpg.diamond || 0))
     .slice(0, 10)
 
-  let text = `*───「 ZETA RPG LEADERBOARD 」───*\n\n`
+  let text = `*───「 DJBOTZ RPG LEADERBOARD 」───*\n\n`
 
   // Render Top Level
   text += `🆙 *TOP 10 LEVEL*\n`
