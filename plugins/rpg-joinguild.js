@@ -2,7 +2,7 @@ import { loadDB, saveDB, getUserRPG } from '../lib/waifuHelper.js'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   const wdb = loadDB()
-  if (!text) return m.reply(`Masukkan nama guild! Contoh: ${usedPrefix}${command} ZETA`)
+  if (!text) return m.reply(`Masukkan nama guild! Contoh: ${usedPrefix}${command} DJBOTZ`)
   
   let guild = wdb.guilds[text]
   if (!guild) return m.reply('❌ Guild tidak ditemukan.')
