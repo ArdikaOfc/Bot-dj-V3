@@ -37,8 +37,8 @@ let handler = async (m, { conn }) => {
 
       await conn.sendFile(m.chat, tmpOutput, 'nsfw.webp', '*Random NSFW Sticker Animasi 🔞*', m, false, {
         asSticker: true,
-        packname: 'Ryo Yamada MD',
-        author: 'BY Hilman'
+        packname: 'ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻',
+        author: 'BY ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻'
       })
 
       unlinkSync(tmpGif)
@@ -57,7 +57,7 @@ let handler = async (m, { conn }) => {
       await conn.sendFile(m.chat, tmpOutput, 'nsfw.webp', '*Random NSFW Sticker 🔞*', m, false, {
         asSticker: true,
         packname: 'Bot NSFW',
-        author: 'Hilman'
+        author: 'ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻'
       })
 
       unlinkSync(tmpImg)
