@@ -14,7 +14,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   // 1. MENU UTAMA PET
   if (!action) {
-    let cap = `*───「 ZETA PET CENTER 」───*\n\n`
+    let cap = `*───「 DJBOTZ PET CENTER 」───*\n\n`
     if (user.pet.tipe === 'none') {
       cap += `Kamu belum memiliki teman perjalanan.\nKetik *${usedPrefix}${command} adopt [nama]* untuk memilih.\n\n`
       cap += `*Daftar Harga Adopsi:*\n`
@@ -35,7 +35,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       text: cap,
       contextInfo: {
         externalAdReply: {
-          title: "ZETA PET SYSTEM",
+          title: "DJBOTZ PET SYSTEM",
           body: user.pet.tipe !== 'none' ? `Status: ${user.pet.tipe} Level ${user.pet.level}` : "Pilih pet impianmu!",
           thumbnailUrl: 'https://files.cloudkuimages.guru/images/54b79a9952b0.jpeg',
           mediaType: 1,
