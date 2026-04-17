@@ -40,7 +40,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     text: cap,
     contextInfo: {
       externalAdReply: {
-        title: "ZETA MEDICAL CENTER",
+        title: "DJBOTZ MEDICAL CENTER",
         body: "Pemulihan Instan Berhasil",
         thumbnailUrl: pp,
         mediaType: 1,
