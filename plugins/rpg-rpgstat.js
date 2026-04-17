@@ -47,13 +47,13 @@ let handler = async (m, { conn }) => {
   cap += `🏆 *Pemain Terkuat:* ${topPlayer}\n`
   cap += `📈 *Level Tertinggi:* Lv.${highestLevel}\n`
   cap += `📚 *Rata-rata Level:* Lv.${avgLevel}\n\n`
-  cap += `_Statistik ini diambil langsung dari database pusat ZETA RPG._`
+  cap += `_Statistik ini diambil langsung dari database pusat DJBOTZ RPG._`
 
   conn.sendMessage(m.chat, {
     text: cap,
     contextInfo: {
       externalAdReply: {
-        title: "ZETA RPG ANALYTICS",
+        title: "DJBOTZ RPG ANALYTICS",
         body: "Data Statistik Global",
         thumbnailUrl: pp,
         mediaType: 1,
