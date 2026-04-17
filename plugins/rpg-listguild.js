@@ -4,7 +4,7 @@ let handler = async (m, { conn }) => {
   const wdb = loadDB()
   if (!wdb.guilds || Object.keys(wdb.guilds).length === 0) return m.reply('❌ Belum ada Guild yang terdaftar.')
 
-  let list = `*───「 ZETA GUILD LIST 」───*\n\n`
+  let list = `*───「 DJBOTZ GUILD LIST 」───*\n\n`
   let index = 1
   for (let name in wdb.guilds) {
     let g = wdb.guilds[name]
