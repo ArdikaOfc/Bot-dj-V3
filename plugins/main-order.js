@@ -27,7 +27,7 @@ let handler = async (m, { conn, text }) => {
       text: caption,
       contextInfo: {
         externalAdReply: {
-          title: "VESTIA ZETA MULTI DEVICE",
+          title: "DJBOTZ MULTI DEVICE",
           body: "Silahkan pilih orderan",
           thumbnailUrl: thumbnailUrl,
           mediaType: 1,
@@ -61,7 +61,7 @@ let handler = async (m, { conn, text }) => {
     text: caption,
     contextInfo: {
       externalAdReply: {
-        title: "VESTIA ZETA MULTI DEVICE",
+        title: "DJBOTZ MULTI DEVICE",
         body: "Pesanan berhasil dibuat",
         thumbnailUrl: thumbnailUrl,
         mediaType: 1,
