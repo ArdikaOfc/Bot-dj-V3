@@ -13,7 +13,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   let amount = args[1]
 
   if (!action) {
-    let cap = `*───「 ZETA BANK 」───*\n\n`
+    let cap = `*───「 DJBOTZ BANK 」───*\n\n`
     cap += `💳 *Nama Akun:* ${m.pushName}\n`
     cap += `💰 *Saldo Bank:* Rp ${user.bank.toLocaleString()}\n`
     cap += `💵 *Uang di Saku:* Rp ${(wdb.money[m.sender] || 0).toLocaleString()}\n\n`
@@ -26,7 +26,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       text: cap,
       contextInfo: {
         externalAdReply: {
-          title: "ZETA CENTRAL BANK",
+          title: "DJBOTZ CENTRAL BANK",
           body: "Simpan uangmu agar aman dari rampok!",
           thumbnailUrl: 'https://files.cloudkuimages.guru/images/bbc63933dd81.jpeg',
           mediaType: 1,
