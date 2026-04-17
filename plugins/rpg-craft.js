@@ -41,7 +41,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       text: listHarga,
       contextInfo: {
         externalAdReply: {
-          title: "ZETA BLACKSMITH SHOP",
+          title: "DJBOTZ BLACKSMITH SHOP",
           body: "Bawa materialmu dan tempa senjatamu!",
           thumbnailUrl: 'https://files.cloudkuimages.guru/images/45c908fe1f71.jpeg',
           mediaType: 1,
