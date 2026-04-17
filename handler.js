@@ -371,6 +371,8 @@ export async function handler(chatUpdate) {
                             console.error(e)
                         }
                     }
+      if (m.limit)
+                        m.reply(+m.limit + ' Limit terpakai ✔️')
                 }
                 break
             }
