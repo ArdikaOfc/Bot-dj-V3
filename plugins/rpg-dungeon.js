@@ -55,7 +55,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   let type = text ? text.toLowerCase() : ''
   if (!type || !dungeons[type]) {
-    let list = `*───「 ZETA DUNGEON 」───*\n\n`
+    let list = `*───「 DJBOTZ DUNGEON 」───*\n\n`
     for (let i in dungeons) {
       let d = dungeons[i]
       list += `💀 *${i.toUpperCase()}* (${d.enemy})\n`
