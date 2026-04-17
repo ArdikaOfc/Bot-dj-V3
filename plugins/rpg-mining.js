@@ -53,7 +53,7 @@ let handler = async (m, { conn }) => {
     text: `*───「 MINING 」───*\n\n┌ ✨ Gold: +${gold}\n│ 🪨 Stone: +${stone}${statusDiamond}\n└ 🌟 XP: +${expDapat}\n\nLvl Pickaxe: ${user.pickaxe || 0}`,
     contextInfo: { 
       externalAdReply: { 
-        title: "ZETA MINING", 
+        title: "DJBOTZ MINING", 
         body: `Miner: ${m.pushName}`, 
         thumbnailUrl: 'https://files.cloudkuimages.guru/images/729f13a6369a.jpeg', 
         mediaType: 1, 
