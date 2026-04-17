@@ -46,7 +46,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     contextInfo: {
       mentionedJid: [sender, receiver],
       externalAdReply: {
-        title: "ZETA TRADE",
+        title: "DJBOTZ TRADE",
         body: "Transaksi Berhasil",
         thumbnailUrl: 'https://files.cloudkuimages.guru/images/bbc63933dd81.jpeg',
         mediaType: 1,
