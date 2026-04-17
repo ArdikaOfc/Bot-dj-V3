@@ -34,7 +34,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   }
 
   if (!text) {
-    let cap = `*───「 ZETA MARKET 」───*\n\n`
+    let cap = `*───「 DJBOTZ MARKET 」───*\n\n`
     cap += `*🛒 CARA BELI:* ${usedPrefix}beli [item] [jumlah]\n`
     cap += `*💰 CARA JUAL:* ${usedPrefix}jual [item] [jumlah]\n\n`
     
@@ -51,7 +51,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       text: cap,
       contextInfo: {
         externalAdReply: {
-          title: "ZETA SHOP & MARKET",
+          title: "DJBOTZ SHOP & MARKET",
           body: "Beli material atau jual hasil kebun & petualangan!",
           thumbnailUrl: 'https://files.cloudkuimages.guru/images/bbc63933dd81.jpeg',
           mediaType: 1,
