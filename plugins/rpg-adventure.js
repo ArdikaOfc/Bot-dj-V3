@@ -68,7 +68,7 @@ let handler = async (m, { conn }) => {
     text: cap,
     contextInfo: {
       externalAdReply: {
-        title: "ZETA EXPLORATION",
+        title: "DJBOTZ EXPLORATION",
         body: `Explorer: ${m.pushName} | Lvl: ${user.level}`,
         thumbnailUrl: 'https://files.cloudkuimages.guru/images/be4eeaee7866.jpeg',
         mediaType: 1,
