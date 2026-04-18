@@ -1,6 +1,6 @@
 import fs from 'fs'
 import moment from 'moment-timezone'
-const fallbackThumb = "https://qu.ax/mgyIh"
+const fallbackThumb = "https://qu.ax/pxikO"
 
 let handler = m => m
 
