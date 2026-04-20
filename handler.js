@@ -120,8 +120,11 @@ export async function handler(chatUpdate) {
                 if (!('autoSticker' in chat)) chat.autoSticker = false
                 if (!('premium' in chat)) chat.premium = false
                 if (!('premiumTime' in chat)) chat.premiumTime = false
-                if (!('nsfw' in chat)) chat.nsfw = false
+                if (!('nsfw' in chat)) chat.nsfw = fals
                 if (!('antiBot' in chat)) chat.antiBot = false
+                if (!('antiLinkkick' in chat)) chat.antiLinkkick = false 
+                if (!('antiLinkdelete' in chat)) chat.antiLinkdelete = false
+                if (!('antiLinkwa' in chat)) chat.antiLinkwa = false 
                 if (!('menu' in chat)) chat.menu = false
                 if (!('onlyadmin' in chat)) chat.onlyadmin = false
                 if (!isNumber(chat.expired)) chat.expired = 0
