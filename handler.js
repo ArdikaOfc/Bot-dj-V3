@@ -121,7 +121,7 @@ export async function handler(chatUpdate) {
                 if (!('premium' in chat)) chat.premium = false
                 if (!('premiumTime' in chat)) chat.premiumTime = false
                 if (!('nsfw' in chat)) chat.nsfw = false
-                if (!('antibot in chat)) chat.antibot = false
+                if (!('antibot' in chat)) chat.antibot = false
                 if (!('menu' in chat)) chat.menu = false
                 if (!('onlyadmin' in chat)) chat.onlyadmin = false
                 if (!isNumber(chat.expired)) chat.expired = 0
