@@ -10,7 +10,7 @@ let handler = async (m, {conn, text, args, usedPrefix, command }) => {
 }
 handler.help = ['gitclone2 <username>/<repo>']
 handler.tags = ['downloader']
-handler.command = /(gitclone|git)2/i
+handler.command = /(gitclone2|git2)/i
 handler.register = true
 
 handler.limit = true
