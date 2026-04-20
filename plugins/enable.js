@@ -144,6 +144,33 @@ case 'antibot':
       }
       chat.antiBot = isEnable
       break
+case 'antilinkkick':
+            if (m.isGroup) {
+                if (!(isAdmin || isOwner)) {
+                    global.dfail('admin', m, conn)
+                    throw false
+                }
+            }
+            chat.antiLinkkick = isEnable
+            break
+        case 'antilinkdelete':
+            if (m.isGroup) {
+                if (!(isAdmin || isOwner)) {
+                    global.dfail('admin', m, conn)
+                    throw false
+                }
+            }
+            chat.antiLinkdelete = isEnable
+            break
+        case 'antilinkwa':
+            if (m.isGroup) {
+                if (!(isAdmin || isOwner)) {
+                    global.dfail('admin', m, conn)
+                    throw false
+                }
+            }
+            chat.antiLinkWa = isEnable
+            break
 
     case 'menu':
       if (m.isGroup && !isAdmin && !isOwner) {
