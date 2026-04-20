@@ -135,6 +135,16 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       chat.nsfw = isEnable
       break
 
+case 'antibot':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiBot = isEnable
+      break
+
     case 'menu':
       if (m.isGroup && !isAdmin && !isOwner) {
         global.dfail('admin', m, conn)
@@ -168,6 +178,7 @@ List option:
 | delete
 | document
 | gconly
+| antibot
 | menu
 | nsfw
 | nyimak
