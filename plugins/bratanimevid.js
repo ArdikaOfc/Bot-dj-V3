@@ -14,7 +14,7 @@ let handler = async (m, { conn, args, command }) => {
   if (!text) return m.reply(`✨ Masukin teks dong!\nContoh: .${command} halo ArdikaOfc`)
 
   try {
-    const url = `https://exsalapi.my.id/api/maker/anime-brat/vid?text=${encodeURIComponent(text)}`
+    const url = `https://exsalapi.my.id/api/maker/anime-brat/vid?text=${encodeURIComponent(text)}&apikey=freepublic`
     const buffer = (await axios.get(url, { responseType: 'arraybuffer' })).data
 
     const stickerBuffer = await createSticker(buffer, {
