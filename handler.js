@@ -195,7 +195,24 @@ export async function handler(chatUpdate) {
         // Options Check
         if (opts['nyimak']) return
         if (opts['pconly'] && m.chat.endsWith('g.us')) return
-        if (opts['gconly'] && !m.chat.endsWith('g.us')) return
+        if (opts['gconly'] && !m.fromMe && !m.chat.endsWith('g.us') && !global.db.data.users[m.sender].premium && !global.db.data.users[m.sender].vip)
+return this.sendMessage(m.chat, {
+text: `*– Bot tidak dapat diakses di private chat*
+Maaf Hanya pengguna premium saja yang dapat mengakses firur di Private bot jika kamu melihat pesan ini berarti kamu hanya pengguna gratis 
+
+Tapi tenang kamu masih bisa akses bot ini di Kominitas *${namebot}* 
+Kamu dapat akses fitur downloader, game, play, ai, dan lain lain sekarang jika bergabung 
+
+*– Bergabung Sekarang :*
+${gc}`,
+contextInfo: {
+mentionedJid: [m.sender, nomorown],
+externalAdReply: { showAdAttribution: true, 
+title: wm,
+thumbnailUrl: thumbnail,
+mediaType: 1,
+renderLargerThumbnail: true 
+}}}, { quoted: m}) 
         if (opts['swonly'] && m.chat !== 'status@broadcast') return
         if (typeof m.text !== 'string') m.text = ''
 
