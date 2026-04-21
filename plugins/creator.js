@@ -41,6 +41,7 @@ let handler = async (m, { conn }) => {
       'ʜᴀɴʏᴀ ʙᴏᴛ ʙɪᴀsᴀ ʏᴀɴɢ ᴋᴀᴅᴀɴɢ sᴜᴋᴀ ᴇʀᴏʀ ☺'
     ]
   ])
+   await conn.sendMessage(m.chat, { audio: { url: 'https://raw.githubusercontent.com/Bell575/dat1/main/uploads/54b7b4-1761507775605.opus' }, mimetype: 'audio/ogg; codecs=opus', ptt: true }, { quoted: m });
 
   await m.reply('ᴍʏ ᴏᴡɴᴇʀ ᴅᴏɴᴛ sᴘᴀᴍ ᴏʀ ʏᴏᴜ ᴡɪʟʟ ʙᴇ ʙʟᴏᴄᴋᴇᴅ')
 }
