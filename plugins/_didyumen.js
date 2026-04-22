@@ -51,7 +51,7 @@ handler.before = async function (m, { match, usedPrefix }) {
         title: 'BOTZ DJ WhatsApp Bot',
         body: 'Simple • Fast • Multifungsi',
         thumbnail: fs.readFileSync('./media/botdj1.jpg'),
-        sourceUrl: 'https://t.me/Allenkujou',
+        sourceUrl: 'https://wa.me/6283115862272',
         mediaType: 1,
         renderLargerThumbnail: true
       }
