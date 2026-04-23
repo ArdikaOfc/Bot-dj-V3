@@ -28,7 +28,7 @@ const handler = async (m, { conn }) => {
 
 handler.help = ["speedtest"];
 handler.tags = ["info"];
-handler.command = /^(speedtest|ookla)$/i;
+handler.command = /^(speed|speedtest|ookla)$/i;
 handler.premium = false;
 handler.register = true;
 export default handler;
