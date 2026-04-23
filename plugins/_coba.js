@@ -16,7 +16,7 @@ let handler = async (m, { conn }) => {
 
 					},{
 
-						buttonId: 'cobacoba',
+						buttonId: 'teskeberuntungan',
 
 						buttonText: { displayText: '\n' + pickRandom(anu)},
 
