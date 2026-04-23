@@ -24,7 +24,7 @@ let handler = async (m, { conn }) => {
 
   await conn.sendMessage(m.chat, {
     text:
-`👾 *R U N T I M E  S T A T U S* 👾
+`🎶 *R U N T I M E  S T A T U S* 🎶
 
 ⏳ *Active Time:*
 ${muptime}
