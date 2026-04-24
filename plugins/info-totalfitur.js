@@ -1,57 +1,50 @@
-import fs from 'fs'
+import fs from 'fs';
 
-let handler = async (m, { conn }) => {
-  await m.react('🕒')
+import fetch from 'node-fetch';
 
-  let totalFitur = Object.values(global.plugins).filter(v => v.help && v.tags).length
-  let totalCommand = Object.values(global.plugins)
+import moment from 'moment-timezone';
+
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+await m.react('⏳')
+
+    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
+
+    let name = await conn.getName(who);
+let totalCommand = Object.values(global.plugins)
     .map(v => v.command)
     .filter(v => v)
     .map(v => Array.isArray(v) ? v.length : 1)
     .reduce((a, b) => a + b, 0)
 
-  await m.react('✅')
+    let fitur = Object.values(plugins).filter(v => v.help && !v.disabled).map(v => v.help).flat(1);
 
-  let caption = `
-🔧 *Total Fitur:* ${totalFitur}
-📖 *Total Command:* ${totalCommand}
-`.trim()
+    let totalf = Object.values(global.plugins).filter(
 
-  let thumbnail = fs.readFileSync('./media/thumbnail.jpg')
+        (v) => v.help && v.tags
 
-  await conn.sendMessage(m.chat, {
-    text: caption,
-    contextInfo: {
-      externalAdReply: {
-        title: "ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻",
-        body: "Bot Status",
-        thumbnail,
-        mediaType: 1,
-        renderLargerThumbnail: true,
-       // sourceUrl: "https://youtube.com/"
-      }
-    }
-  }, { quoted: m })
+    ).length;
 
-  try {
-    await conn.sendFile(
-      m.chat,
-      './media/tes2.mp3',
-      'menu.mp3',
-      null,
-      m,
-      true,
-      {
-        type: 'audioMessage',
-        ptt: true,
-        seconds: 0
-      }
-    )
-  } catch {}
+    let txt = `*乂  B O T  D J -  F E A T U R E*\n\n`;
+
+    txt += `  • ᴄʀᴇᴀᴛᴏʀ : ᴿꜰ᭄༺ArdikaOfcོ ×፝֟͜×༻\n`;
+    await m.react('✅')
+
+    await conn.relayMessage(m.chat,{
+pollResultSnapshotMessage:{
+pollVotes:[
+{optionName:"𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝚃𝚄𝚁",optionVoteCount:`${fitur.length}`},
+{optionName:"𝚃𝙾𝚃𝙰𝙻 𝙲𝙾𝙼𝙼𝙰𝙽𝙳",optionVoteCount:`${totalCommand}`},
+],
+name:txt,
+pollType:0
+}
+},{})
 }
 
-handler.help = ['totalfitur']
-handler.tags = ['info']
-handler.command = ['totalfitur']
+handler.help = ['totalfitur2'];
 
-export default handler
+handler.tags = ['main', 'info'];
+
+handler.command = /^(totalfitur2)$/i;
+
+export default handler;
