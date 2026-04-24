@@ -24,7 +24,7 @@ let totalCommand = Object.values(global.plugins)
 
     ).length;
 
-    let txt = `*乂  B O T  D J -  F E A T U R E*\n\n`;
+    let txt = `*乂  D J B O T Z  -  F E A T U R E*\n\n`;
 
     txt += `  • ᴄʀᴇᴀᴛᴏʀ : ᴿꜰ᭄༺ArdikaOfcོ ×፝֟͜×༻\n`;
     await m.react('✅')
