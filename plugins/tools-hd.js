@@ -1,9 +1,9 @@
     /*
 Wm: https://whatsapp.com/channel/0029VaF9C4zId7nOTFF8ZK0v
 Jgn hapus wm ku
-Fitur:  Hd, Remini 
+Fitur:  Hd, Remini, Upscale
 Type : Plugins Esm 
-Api: hhttps://api.nexray.web.id/
+Api: https://api.nexray.web.id/
 Creator: ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻
 */
 import axios from 'axios'
