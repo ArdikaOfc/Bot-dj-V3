@@ -62,7 +62,7 @@ global.timestamp = {
 const __dirname = global.__dirname(import.meta.url)
 
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
-global.prefix = new RegExp('^[' + (opts['prefix'] || '‎xzXZ/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
+global.prefix = new RegExp('^[' + (opts['prefix'] || '‎jxzJXZ/i!#%+£¢€¥^°=¶∆×÷π√✓©®:;?&.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
 
 global.db = new Low(
   /https?:\/\//.test(opts['db'] || '') ?
@@ -172,7 +172,7 @@ console.log(chalk.green(`Nomor digunakan: ${phoneNumber}`))
   console.log(chalk.bgWhite(chalk.blue('Generating Pairing Code...')))
   setTimeout(async () => {
     try {
-      const rawCode = await conn.requestPairingCode(phoneNumber, 'ALLENCHX')
+      const rawCode = await conn.requestPairingCode(phoneNumber, 'BOTZDJMD')
       const code = rawCode?.match(/.{1,4}/g)?.join('-') || rawCode
 
       // ASCII Box
@@ -180,7 +180,7 @@ console.log(chalk.green(`Nomor digunakan: ${phoneNumber}`))
       console.log(chalk.green(`\n┌${line}┐`))
       console.log(chalk.green(`│  ${chalk.yellow.bold(code)}  │`))
       console.log(chalk.green(`└${line}┘`))
-      console.log(chalk.cyan(`\nPairing Code: ${chalk.bold('ALLENCHX')}`))
+      console.log(chalk.cyan(`\nPairing Code: ${chalk.bold('BOTZDJMD')}`))
       console.log(chalk.magenta('📌 Masukkan pairing code ini ke WhatsApp segera!'))
     } catch (e) {
       console.error(chalk.red('❌ Gagal generate pairing code:'), e)
@@ -313,7 +313,7 @@ global.reloadHandler = async function (restatConn) {
 
  conn.welcome = '❖━━━〔 ようこそ 〕━━━❖\n\n' +
 '┏━━━━━━━━━━━━━━━\n' +
-'┃ 🌸 @subject\n' +
+'┃ 🎶 @subject\n' +
 '┣━━━━━━━━━━━━━━━\n' +
 '┃ (≧◡≦) ♡ Hai @user\n' +
 '┃ Selamat datang\n' +
