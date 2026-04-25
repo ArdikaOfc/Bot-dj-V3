@@ -27,7 +27,7 @@ let handler = async (m, { conn, text }) => {
   let index = 0 
   let video = videos[index] 
 
-  let bella = `
+  let ArdikaOfc = `
 ° *${video.title}*\n
 ↳ *Link :* ${video.url}\n
 ↳ *Duration :* ${video.timestamp}\n
@@ -38,10 +38,10 @@ let handler = async (m, { conn, text }) => {
     m.chat,
     {
       image: { url: video.thumbnail },
-      caption: bella,
-      title: "YouTube Search By Takashi G4",
+      caption: ArdikaOfc,
+      title: "YouTube Search By DjBotz V3",
       subtitle: "YouTube Search",
-      footer: "Takashi - 2025",
+      footer: "DjBotz - 2026",
       media: true,
       interactiveButtons: [
         {
@@ -55,7 +55,7 @@ let handler = async (m, { conn, text }) => {
           name: "quick_reply",
           buttonParamsJson: JSON.stringify({
             display_text: "Download Audio",
-            id: `.play ${video.url}`
+            id: `.ytmp3 ${video.url}`
           })
         },
         {
