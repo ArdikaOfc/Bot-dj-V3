@@ -80,7 +80,7 @@ global.psaweria = '_'
 
 /*============= GITHUB =============*/
 global.Owner = 'username' // isi username githubmu
-global.token = 'token github' ambil tokennya di github
+global.token = 'token github' // ambil tokennya di github
 
 /*============= TAMPILAN =============*/
 global.dmenut = 'ଓ═┅═━–〈' //top
