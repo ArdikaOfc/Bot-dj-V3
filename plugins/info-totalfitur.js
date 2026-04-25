@@ -32,8 +32,8 @@ let totalCommand = Object.values(global.plugins)
     await conn.relayMessage(m.chat,{
 pollResultSnapshotMessage:{
 pollVotes:[
-{optionName:"𝑻𝑶𝑻𝑨𝑳 𝑭𝑰𝑻𝑼𝑹",optionVoteCount:`${fitur.length}`},
-{optionName:"𝑻𝑶𝑻𝑨𝑳 𝑪𝑶𝑴𝑴𝑨𝑵𝑫",optionVoteCount:`${totalCommand}`},
+{optionName:`• 🗂️ 𝑻𝑶𝑻𝑨𝑳 𝑭𝑰𝑻𝑼𝑹: ${fitur.length}`,optionVoteCount:`${fitur.length}`},
+{optionName:`• 📄 𝑻𝑶𝑻𝑨𝑳 𝑪𝑶𝑴𝑴𝑨𝑵𝑫: ${totalCommand}`,optionVoteCount:`${totalCommand}`},
 ],
 name:txt,
 pollType:0
