@@ -20,11 +20,13 @@ let handler = async (m, { conn, text, usedPrefix, command, isPrems }) => {
 
         let res = await axios.get(`https://rynekoo-api.hf.space/downloader/mediafire?url=${encodeURIComponent(text)}`)
         let result = res.data?.result || "Gagal mendapatkan api rynekoo."
-        let caption = `
+        let caption = ` ༺ *M E D I A F I R E  D O W N L O A D* ༻
 *💌 Nama:* ${result.filename}
 *📊 Size:* ${result.filesize}
 *📆 Upload:* ${result.uploaded}
-*📦 MimeType:* ${result.mimetype}`
+*📦 MimeType:* ${result.mimetype}
+
+*🖇️ Link download:* ${result.download_url}`
 
         // Kirim hasil
             await m.reply(caption);
