@@ -1,47 +1,44 @@
-// • MediaFire Download 
-// • Type : Plugins ESM 
-// • Scrape : https://whatsapp.com/channel/0029VagslooA89MdSX0d1X1z/740
-// • Author : Hilman 
-import fetch from "node-fetch"
+/*
+Wm: https://whatsapp.com/channel/0029VaF9C4zId7nOTFF8ZK0v
+Jgn hapus wm ku
+Fitur:  Download MediaFire
+Type : Plugins Esm 
+Api: https://rynekoo-api.hf.space/d
+Creator: ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻
+*/
+import axios from 'axios'
 
-let handler = async (m, { conn, args }) => {
-  let url = args[0]
-  if (!url || !/^https?:\/\/(www\.)?mediafire\.com/.test(url)) {
-    return conn.reply(m.chat, "🍭 Kirim link MediaFire yang valid!", m)
-  }
+const mediaRegex = /https?:\/\/(www\.)?mediafire\.com\/(file|folder)\/(\w+)/;
 
-  try {
-    const res1 = await fetch("https://staging-mediafire-direct-url-ui-txd2.frontend.encr.app/api/mediafire/taskid", {
-      method: "POST",
-      headers: {
-        "accept": "*/*",
-        "content-type": "application/json",
-        "accept-language": "id-ID"
-      }
-    })
+let handler = async (m, { conn, text, usedPrefix, command, isPrems }) => {
+  if (!text) throw `Contoh:\n${usedPrefix}${command} https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file`;
+  if (!mediaRegex.test(text)) return m.reply('Link tidak valid! Pastikan link Mediafire benar.');
 
-    const { taskId } = await res1.json()
+    try {
+        // React loading
+        await conn.sendMessage(m.chat, { react: { text: '⏳', key: m.key } });
 
-    const res2 = await fetch(`https://staging-mediafire-direct-url-ui-txd2.frontend.encr.app/api/mediafire/download/${taskId}`, {
-      method: "POST",
-      headers: {
-        "accept": "*/*",
-        "content-type": "application/json",
-        "accept-language": "id-ID"
-      },
-      body: JSON.stringify({ url })
-    })
+        let res = await axios.get(`https://rynekoo-api.hf.space/downloader/mediafire?url=${encodeURIComponent(text)}`)
+        let result = res.data?.result || "Gagal mendapatkan api rynekoo."
+        let caption = `
+*💌 Nama:* ${result.filename}
+*📊 Size:* ${result.filesize}
+*📆 Upload:* ${result.uploaded}
+*📦 MimeType:* ${result.mimetype}`
 
-    const { fileName, downloadUrl } = await res2.json()
-    if (!downloadUrl) throw "🍬 Link tidak ditemukan atau gagal diproses."
+        // Kirim hasil
+            await m.reply(caption);
+    await conn.sendMessage(m.chat, {
+      document: { url: result.download_url },
+      fileName: result.filename,
+      mimetype: result.mimetype,
+    }, { quoted: m });
+        await conn.sendMessage(m.chat, { react: { text: '', key: m.key } });
 
-    const buffer = await fetch(downloadUrl).then(r => r.buffer())
-    if (!buffer || buffer.length === 0) throw "🍬 Gagal ambil file dari link."
-
-    await conn.sendFile(m.chat, buffer, fileName, `✨ *${fileName}*`, m)
-  } catch (e) {
-    conn.reply(m.chat, "🍬 Gagal kirim file: " + (e.message || "Unknown error"), m)
-  }
+    } catch (e) {
+        console.error(e);
+        await m.reply(`❌ Terjadi kesalahan: ${e.message}`);
+    }
 }
 
 handler.help = ["mediafire <url>"]
