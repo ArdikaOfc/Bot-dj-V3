@@ -27,17 +27,14 @@ let totalCommand = Object.values(global.plugins)
 
     await m.react('✅')
 
-    const stats = [
-      `🔧 𝑻𝑶𝑻𝑨𝑳 𝑭𝑰𝑻𝑼𝑹 : ${fitur.length}`,
-      `📖 𝑻𝑶𝑻𝑨𝑳 𝑪𝑶𝑴𝑴𝑨𝑵𝑫 : ${totalCommand}`
-    ]
-
     const content = {
       pollResultSnapshotMessage: {
-        pollVotes: stats.map(v => ({
-          optionName: v,
-          optionVoteCount: Math.floor(Math.random() * 90000) + 10000
-        })),
+        pollVotes: [
+          {optionName: `🔧 𝑻𝑶𝑻𝑨𝑳 𝑭𝑰𝑻𝑼𝑹 : ${fitur.length}`,
+          optionVoteCount: `${fitur.length}`},
+          {optionName: `📖 𝑻𝑶𝑻𝑨𝑳 𝑪𝑶𝑴𝑴𝑨𝑵𝑫 : ${totalCommand}`,
+          optionVoteCount: `${totalCommand}`},
+        ],
         name: txt,
         contextInfo: {
           forwardingScore: 127,
