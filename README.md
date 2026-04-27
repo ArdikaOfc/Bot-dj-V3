@@ -1,4 +1,4 @@
-# 📸 ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻ 📸
+# 🎶 ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻ 🎶
 Bot WhatsApp Multifungsi | Base dari **Nao MD** | Full **Plugins ESM**  
 
 ---
@@ -13,7 +13,10 @@ Bot WhatsApp Multifungsi | Base dari **Nao MD** | Full **Plugins ESM**
 - Plugin system auto load (📌 Type: Plugins ESM)  
 - Downloader TikTok, YouTube, IG, Facebook  
 - Sticker maker + custom packname & author  
+- Group antitagsw, hidetag/totag, buka/tutup, antilinkdelete    
+- Rpg adventure, inventory, mancing, mining, rampok, shop, bank     
 - AI chat, text-to-image, text-to-speech   
+- Total fitur 500+ / 900+      
 - Menu keren dan bisa custom  
 
 ---
@@ -35,7 +38,7 @@ Bot WhatsApp Multifungsi | Base dari **Nao MD** | Full **Plugins ESM**
 - 🤝 *Bantu share* 
 - Reupload diperbolehkan asal cantumkan credit. 
 - Support nodejs 21  
-- Script no enc chat me:    
+- Contact creator:    
   [Klik di sini untuk chat creator](https://wa.me/6283115862272)
 
 ---
