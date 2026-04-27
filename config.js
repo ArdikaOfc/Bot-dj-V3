@@ -118,6 +118,10 @@ global.APIKeys = {
     // 'https://website': 'apikey'
 }
 
+global.apikey = 'ApiKey' // login dan ambil apikey nya di https://fgsi.dpdns.org/
+
+//Note: fgsiapi-3b61d3d0-6d ini hanya gabutz creator saja
+
 /*============= OTHER =============*/
 global.dpptx = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
 global.ddocx = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
