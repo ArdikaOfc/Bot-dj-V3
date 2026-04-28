@@ -33,6 +33,7 @@ global.mods = ['6283115862272']
 global.prems = ['6283115862272']
 global.nomorbot = '6282315950966' // ubah pake no kalian
 global.nomorown = '6283115862272'// ubah pake no kalian
+global.number_bot = '' // Kalo pake panel bisa masukin nomer di sini, jika belum ambil session. Format : '628xx'
 global.autotyping = true // default mati
 global.autorecording = true // default mati
 
