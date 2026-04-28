@@ -37,7 +37,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
   try {
     const lprem = 'Ⓟ'
     const llim = 'Ⓛ'
-    const lown = 'Ⓞ
+    const lown = 'Ⓞ'
     const uptime = clockString(process.uptime() * 1000)
 
     let user = global.db.data.users[m.sender] || {}
