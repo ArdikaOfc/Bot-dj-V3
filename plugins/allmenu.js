@@ -20,7 +20,7 @@ _• Uptime : %uptime_
 _• DB     : %rtotalreg / %totalreg_
 ────────────────
 
-Ⓟ = Premium   Ⓛ = Limit
+Ⓟ = Premium   Ⓛ = Limit   Ⓞ = Owner
 %readmore
 `.trim(),
 
@@ -37,6 +37,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
   try {
     const lprem = 'Ⓟ'
     const llim = 'Ⓛ'
+    const lown = 'Ⓞ
     const uptime = clockString(process.uptime() * 1000)
 
     let user = global.db.data.users[m.sender] || {}
@@ -171,7 +172,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 
 handler.help = ['allmenu']
 handler.tags = ['main']
-handler.command = /^(allmenu|help|\?)$/i
+handler.command = /^(almenu|menuall|allmenu|help|\?)$/i
 
 export default handler
 
