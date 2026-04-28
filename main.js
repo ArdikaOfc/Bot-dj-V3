@@ -160,7 +160,7 @@ if (usePairingCode && !conn.authState.creds.registered) {
   let phoneNumber = (argv._[0] || '').trim().replace(/[^0-9]/g, '')
 
   while (!phoneNumber) {
-    phoneNumber = (global.nomorbot ? global.nomorbot : process.env.BOT_NUMBER || await question(
+    phoneNumber = (global.number_bot ? global.number_bot : process.env.BOT_NUMBER || await question(
       chalk.blueBright('Input nomor WhatsApp yang valid (awali dengan kode negara, contoh: 62812xxxxxx):\n')
     )).trim().replace(/[^0-9]/g, '')
   }
