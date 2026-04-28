@@ -95,7 +95,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       owner: 'OWNER',
       panel: 'PANEL',
       audio: 'AUDIO',
-      nsfw: 'NSFW'
+      nsfw: 'NSFW',
+      jadibot: 'JADI BOT'
     }
 
     let before = defaultMenu.before
