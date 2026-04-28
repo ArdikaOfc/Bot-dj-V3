@@ -25,7 +25,7 @@ _• DB     : %rtotalreg / %totalreg_
 `.trim(),
 
   header: `╔══〔 *%category* 〕───⬡`,
-  body: `║ ⬡ %cmd %isPremium %islimit`,
+  body: `║ ⬡ %cmd %isPremium %islimit %isOwner`,
   footer: `╚════════════════⬡\n`,
   after: `_Terima kasih sudah menggunakan ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻_`,
 }
@@ -73,6 +73,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
         tags: Array.isArray(p.tags) ? p.tags : [p.tags],
         prefix: 'customPrefix' in p,
         limit: p.limit,
+        owner: p.owner,
         premium: p.premium,
       }))
 
