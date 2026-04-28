@@ -118,7 +118,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
                 .replace('%cmd', menu.prefix ? cmd : _p + cmd)
                 .replace('%islimit', menu.limit ? llim : '')
                 .replace('%isPremium', menu.premium ? lprem : '')
-                .replace('%isOwner', menu.owner ? lOwn : '')
+                .replace('%isOwner', menu.owner ? lown : '')
             ).join('\n')
           ).join('\n')
 
