@@ -155,6 +155,7 @@ export async function handler(chatUpdate) {
                     antiLinkdelete: false,
                     antiLinkWa: false,
                     menu: true,
+                    autocleartmp: true
                     onlyadmin: false,
                     listrespon: {},
                     produk: {}
