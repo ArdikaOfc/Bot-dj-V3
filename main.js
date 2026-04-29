@@ -1,6 +1,6 @@
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '1';
 
-import './config.js'
+import './djmd.js'
 
 import path, { join } from 'path'
 import { platform } from 'process'
