@@ -81,6 +81,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       global.opts.pconly = isEnable
       break
 
+     case 'autocleartmp':
+            isAll = true
+            if (!isOwner) {
+                global.dfail('owner', m, conn)
+                throw false
+            }
+            bot.cleartmp = isEnable
+            break
+
     case 'owneronly':
       isAll = true
       if (!isROwner) {
@@ -200,23 +209,24 @@ case 'antilinkkick':
       if (!/[01]/.test(command)) {
         return m.reply(`
 List option:
-| welcome
-| detect
-| delete
-| document
-| gconly
-| antibot
-| menu
-| nsfw
-| nyimak
-| owneronly
-| pconly
-| public
-| self
-| simi
-| swonly
-| viewonce
-| autogpt
+✨ welcome
+🔍 detect
+🔙 delete
+🗃️ document
+📢 gconly
+👾 antibot
+📦 menu
+🔞 nsfw
+🔕 nyimak
+👑 owneronly
+🪪 pconly
+🔓 public
+🔒 self
+♻️ simi
+📨 swonly
+👁️‍🗨️ viewonce
+📝 autogpt
+🚮 autocleartmp
 
 Contoh:
 ${usedPrefix}enable welcome
