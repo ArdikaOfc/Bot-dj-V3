@@ -112,7 +112,7 @@ export async function handler(chatUpdate) {
                 if (!('sPromote' in chat)) chat.sPromote = ''
                 if (!('sDemote' in chat)) chat.sDemote = ''
                 if (!('antiLink' in chat)) chat.antiLink = false
-                if (!('antispam' in chat)) chat.antispam = false 
+                if (!('antispam' in chat)) chat.antispam = true 
                 if (!('viewonce' in chat)) chat.viewonce = false
                 if (!('antiToxic' in chat)) chat.antiToxic = false
                 if (!('simi' in chat)) chat.simi = false
@@ -140,7 +140,7 @@ export async function handler(chatUpdate) {
                     sPromote: '',
                     sDemote: '',
                     antiLink: false,
-                    antispam: false, 
+                    antispam: true, 
                     viewonce: false,
                     simi: false,
                     autogpt: false,
