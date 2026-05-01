@@ -8,7 +8,6 @@ async function aichat(question, { model = 'gpt-5-nano' } = {}) {
       'gpt-5-nano': '25871',
       'gemini': '25874',
       'deepseek': '25873',
-      'claude': '25875',
       'grok': '25872',
       'meta-ai': '25870',
       'qwen': '25869'
@@ -17,12 +16,12 @@ async function aichat(question, { model = 'gpt-5-nano' } = {}) {
     if (!question) throw new Error('Question is required.')
     if (!_model[model]) throw new Error(`Available models: ${Object.keys(_model).join(', ')}.`)
 
-    const { data: html } = await axios.post(`https://api.nekolabs.web.id/px?url=${encodeURIComponent('https://chatgptfree.ai/')}&version=v2`)
+    const { data: html } = await axios.post(`https://rynekoo-api.hf.space/px?url=${encodeURIComponent('https://chatgptfree.ai/')}&version=v2`)
     const nonce = html.result.content.match(/&quot;nonce&quot;\s*:\s*&quot;([^&]+)&quot;/)
     if (!nonce) throw new Error('Nonce not found.')
 
     const { data } = await axios.post(
-      `https://api.nekolabs.web.id/px?url=${encodeURIComponent('https://chatgptfree.ai/wp-admin/admin-ajax.php')}&version=v2`,
+      `https://rynekoo-api.hf.space/px?url=${encodeURIComponent('https://chatgptfree.ai/wp-admin/admin-ajax.php')}&version=v2`,
       new URLSearchParams({
         action: 'aipkit_frontend_chat_message',
         _ajax_nonce: nonce[1],
@@ -64,9 +63,6 @@ let handler = async (m, { command, text }) => {
       case 'gemini':
         model = 'gemini'
       break
-      case 'claude':
-        model = 'claude'
-      break
       case 'grok':
         model = 'grok'
       break
@@ -87,8 +83,8 @@ let handler = async (m, { command, text }) => {
   }
 }
 
-handler.help = ['deepseek','qwen','claude','gpt-4o-mini','gpt-5-nano','gemini','grok','meta-ai']
-handler.command = ['deepseek','qwen','claude','gpt-4o-mini','gpt-5-nano','gemini','grok','meta-ai']
+handler.help = ['deepseek','qwen','gpt-4o-mini','gpt-5-nano','gemini','grok','meta-ai']
+handler.command = ['deepseek','qwen','gpt-4o-mini','gpt-5-nano','gemini','grok','meta-ai']
 handler.tags = ['ai']
 
 export default handler
