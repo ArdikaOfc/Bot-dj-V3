@@ -10,7 +10,7 @@ let handler = async (m, { conn, args, command }) => {
   if (!text) return m.reply(`✨ Masukin teks dong!\nContoh: .${command} halo ArdikaOfc`)
 
   try {
-    const url = `https://api.elrayyxml.web.id/api/maker/bratanime?text=${encodeURIComponent(text)}`
+    const url = `https://api.skylow.web.id/api/maker/bratanime?text=${encodeURIComponent(text)}`
     const buffer = (await axios.get(url, { responseType: 'arraybuffer' })).data
 
     const stickerBuffer = await createSticker(buffer, {
