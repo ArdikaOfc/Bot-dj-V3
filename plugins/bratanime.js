@@ -1,6 +1,6 @@
 /* 
 • Fitur : Anime Brat
-• API : https://api.elrayyxml.web.id
+• API : https://api.skylow.web.id/
 */
 import axios from 'axios'
 import { createSticker, StickerTypes } from 'wa-sticker-formatter'
