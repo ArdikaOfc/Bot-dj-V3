@@ -1,4 +1,5 @@
-import fs from 'fs'
+import axios from 'axios' 
+import FormData from 'form-data'
 import {
   loadDB,
   saveDB,
@@ -12,22 +13,30 @@ let handler = async (m, { conn }) => {
   if (!c) return m.reply('❌ Kamu belum punya pasangan')
 
   // ===== WAJIB REPLY GAMBAR =====
-  if (!m.quoted) return m.reply('❌ Reply gambar yang ingin dijadikan PP')
+      const q = m.quoted ? m.quoted : m
+    const mime = (q.msg || q).mimetype || ''
+      if (!m.quoted) return m.reply('❌ Reply gambar yang ingin dijadikan PP')
   if (!/image/.test(m.quoted.mtype))
     return m.reply('❌ Yang direply harus gambar')
+    
+   let buffer = await q.download()
+    if (!buffer) throw '❌ Gagal mengambil gambar'
 
-  // ===== DOWNLOAD GAMBAR =====
-  const img = await m.quoted.download()
-  if (!img) return m.reply('❌ Gagal mengambil gambar')
+    let ext = mime.split('/')[1] || 'bin'
+    let filename = `upload_${Date.now()}.${ext}`
 
-  const tmp = `./tmp_pp_${Date.now()}.jpg`
-  fs.writeFileSync(tmp, img)
+    const form = new FormData()
+    form.append('file', buffer, filename)
 
-  // ===== UPLOAD =====
-  const url = await uploadCloudku(tmp)
-  fs.unlinkSync(tmp)
+    const { data } = await axios.post(
+      'https://cdn.nekohime.site/upload',
+      form,
+      { headers: form.getHeaders() }
+    )
 
-  if (!url) return m.reply('❌ Upload gagal')
+    if (!data?.files?.length) throw '❌ Upload gagal'
+
+    let url = data.files[0].url || data.files[0]
 
   // ===== SIMPAN KE PENDING =====
   if (!db.pendingPP) db.pendingPP = {}
@@ -42,7 +51,7 @@ let handler = async (m, { conn }) => {
 
   // ===== KIRIM KE OWNER (DENGAN GAMBAR) =====
   await sendToOwner(conn, {
-    image: { url },
+    image: { url: url },
     caption:
       `🖼️ *REQUEST GANTI PP*\n\n` +
       `👤 User : @${m.sender.split('@')[0]}\n` +
