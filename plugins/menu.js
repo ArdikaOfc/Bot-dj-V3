@@ -39,8 +39,8 @@ await conn.sendMessage(m.chat, {
 				buttonText: { displayText: 'All Menu' },
 				type: 1
 			},{
-				buttonId: `${usedPrefix}sewa`,
-				buttonText: { displayText: 'SEWA BOT' },
+				buttonId: `${usedPrefix}owner`,
+				buttonText: { displayText: 'OWNER' },
 				type: 1
 			}, {
 				buttonId: 'list_button',
@@ -51,6 +51,7 @@ await conn.sendMessage(m.chat, {
 						title: 'List Menu',
 						sections: [{
 							title: 'List Menu',
+                            highlight_label: `ᴘᴏᴘᴜʟᴇʀ`,
 							rows: [{
 								title: 'All Menu',
                                 description: 'Menampilka All Menu',
