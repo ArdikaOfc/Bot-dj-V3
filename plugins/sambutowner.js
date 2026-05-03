@@ -20,23 +20,70 @@ handler.before = async function (m, { conn }) {
 
         if (isOwnerChatting) {
             let teksOwner = [
-                "Akses Owner terverifikasi.\nSistem siap dijalankan.",
-                "Selamat datang, Owner.\nBot dalam kondisi optimal.",
-                "Owner online.\nMenunggu instruksi selanjutnya.",
-                "Kehadiran Owner terdeteksi.\nSemua modul aktif dan stabil."
+                "Akses Developer terverifikasi.\nSistem siap dijalankan.",
+                "Selamat datang, Developer.\nBot dalam kondisi optimal.",
+                "Developer online.\nMenunggu instruksi selanjutnya.",
+                "Kehadiran Developer terdeteksi.\nSemua modul aktif dan stabil."
             ]
             let pilih = teksOwner[Math.floor(Math.random() * teksOwner.length)]
-            await conn.reply(m.chat, pilih, m)
+                                            await conn.sendMessage(m.chat, {
+
+                                        text: pilih,
+              footer: 'Powered by ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻',
+
+                                        buttons: [{
+
+                                                buttonId: '.allmenu',
+
+                                                buttonText: { displayText: 'All Menu' },
+
+                                                type: 1
+
+                                        },{
+
+                                                buttonId: '.backup',
+
+                                                buttonText: { displayText: 'Backup Sc' },
+
+                                                type: 1
+
+                                        }]
+
+                                })
+
         } else if (isMention || isReply) {
             let teksTag = [
-                `@${m.sender.split('@')[0]}, Owner sedang offline.\nSilakan tinggalkan pesan.`,
-                "Owner belum dapat dihubungi saat ini.\nMohon tidak mengulang panggilan.",
-                "Permintaan Anda telah dicatat sistem.\nOwner akan meninjaunya nanti.",
-                "Owner tidak tersedia untuk saat ini.\nTerima kasih atas pengertiannya."
+                `@${m.sender.split('@')[0]}, Developer sedang offline.\nSilakan tinggalkan pesan.`,
+                "Developer belum dapat dihubungi saat ini.\nMohon tidak mengulang panggilan.",
+                "Permintaan Anda telah dicatat sistem.\nDeveloper akan meninjaunya nanti.",
+                "Developer tidak tersedia untuk saat ini.\nTerima kasih atas pengertiannya."
             ]
             let pilih = teksTag[Math.floor(Math.random() * teksTag.length)]
-            await conn.reply(m.chat, pilih, m, { mentions: [m.sender] })
-        }
+            await conn.sendMessage(m.chat, {
+
+                                        text: pilih,
+              footer: 'Powered by ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻',
+
+                                        buttons: [{
+
+                                                buttonId: '.allmenu',
+
+                                                buttonText: { displayText: 'All Menu' },
+
+                                                type: 1
+
+                                        },{
+
+                                                buttonId: '.owner',
+
+                                                buttonText: { displayText: 'Owner' },
+
+                                                type: 1
+
+                                        }]
+
+                                }, { mentions: [m.sender] })
+        
 
         this.tagOwnerCooldown[m.sender] = Date.now()
     }
