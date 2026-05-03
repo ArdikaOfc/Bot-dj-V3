@@ -87,7 +87,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
                 global.dfail('owner', m, conn)
                 throw false
             }
-            bot.cleartmp = isEnable
+            setting.cleartmp = isEnable
             break
 
     case 'owneronly':
