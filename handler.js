@@ -126,7 +126,6 @@ export async function handler(chatUpdate) {
                 if (!('antiLinkdelete' in chat)) chat.antiLinkdelete = false
                 if (!('antiLinkWa' in chat)) chat.antiLinkwa = false 
                 if (!('menu' in chat)) chat.menu = false
-                if (!('autocleartmp' in chat)) chat.autocleartmp = true
                 if (!('onlyadmin' in chat)) chat.onlyadmin = false
                 if (!isNumber(chat.expired)) chat.expired = 0
                 if (!('listrespon' in chat)) chat.listrespon = {}
@@ -155,7 +154,6 @@ export async function handler(chatUpdate) {
                     antiLinkdelete: false,
                     antiLinkWa: false,
                     menu: true,
-                    autocleartmp true,
                     onlyadmin: false,
                     listrespon: {},
                     produk: {}
