@@ -41,7 +41,7 @@ handler.before = async function (m, { conn }) {
             let pilih = teksTag[Math.floor(Math.random() * teksTag.length)]
             await conn.sendMessage(m.chat, { text: pilih, footer: 'Powered by ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻', buttons: [
                                 { buttonId: '.allmenu', buttonText: { displayText: 'All Menu' }, type: 1 },
-                                    { buttonId: '.owner', buttonText: { displayText: 'Backup Sc' }, type: 1 }
+                                    { buttonId: '.owner', buttonText: { displayText: 'Owner' }, type: 1 }
                                     ],
                                     headerType: 4,
                                     mentions: [m.sender] }, 
