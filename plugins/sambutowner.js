@@ -26,30 +26,10 @@ handler.before = async function (m, { conn }) {
                 "Kehadiran Developer terdeteksi.\nSemua modul aktif dan stabil."
             ]
             let pilih = teksOwner[Math.floor(Math.random() * teksOwner.length)]
-                                            await conn.sendMessage(m.chat, {
-
-                                        text: pilih,
-              footer: 'Powered by ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻',
-
-                                        buttons: [{
-
-                                                buttonId: '.allmenu',
-
-                                                buttonText: { displayText: 'All Menu' },
-
-                                                type: 1
-
-                                        },{
-
-                                                buttonId: '.backup',
-
-                                                buttonText: { displayText: 'Backup Sc' },
-
-                                                type: 1
-
-                                        }]
-
-                                }, { quoted: m });
+                                await conn.sendMessage(m.chat, { text: pilih, footer: 'Powered by ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻', buttons: [
+                                { buttonId: '.ping', buttonText: { displayText: 'Ping' }, type: 1 },
+                                    { buttonId: '.backup', buttonText: { displayText: 'Backup Sc' }, type: 1 }
+                                    ] }, { quoted: m })
 
         } else if (isMention || isReply) {
             let teksTag = [
@@ -59,30 +39,13 @@ handler.before = async function (m, { conn }) {
                 "Developer tidak tersedia untuk saat ini.\nTerima kasih atas pengertiannya."
             ]
             let pilih = teksTag[Math.floor(Math.random() * teksTag.length)]
-            await conn.sendMessage(m.chat, {
-
-                                        text: pilih,
-              footer: 'Powered by ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻',
-
-                                        buttons: [{
-
-                                                buttonId: '.allmenu',
-
-                                                buttonText: { displayText: 'All Menu' },
-
-                                                type: 1
-
-                                        },{
-
-                                                buttonId: '.owner',
-
-                                                buttonText: { displayText: 'Owner' },
-
-                                                type: 1
-
-                                        }]
-
-                                }, { mentions: [m.sender] }, { quoted: m });
+            await conn.sendMessage(m.chat, { text: pilih, footer: 'Powered by ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻', buttons: [
+                                { buttonId: '.allmenu', buttonText: { displayText: 'All Menu' }, type: 1 },
+                                    { buttonId: '.owner', buttonText: { displayText: 'Backup Sc' }, type: 1 }
+                                    ],
+                                    headerType: 4,
+                                    mentions: [m.sender] }, 
+                                    { quoted: m })
                             }
 
 
