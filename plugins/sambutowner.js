@@ -49,7 +49,7 @@ handler.before = async function (m, { conn }) {
 
                                         }]
 
-                                })
+                                }, { quoted: m });)
 
         } else if (isMention || isReply) {
             let teksTag = [
@@ -82,7 +82,7 @@ handler.before = async function (m, { conn }) {
 
                                         }]
 
-                                }, { mentions: [m.sender] })
+                                }, { mentions: [m.sender] }, { quoted: m });)
                             }
 
 
