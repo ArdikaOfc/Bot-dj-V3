@@ -22,7 +22,7 @@ Aku *ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻*, bot WhatsApp yang siap memba
 • *Versi* : 2.0.0
 • *System* : Plugins ESM
 ──────────────────
-_Ketik salah satu button di bawah untuk melihat detail_
+_Klik salah satu button di bawah ini untuk melihat detail_
 `.trim()
 await conn.sendMessage(m.chat, {
         image: fs.readFileSync('./media/botdj2.jpg'),
