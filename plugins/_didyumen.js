@@ -1,7 +1,7 @@
 import didyoumean from 'didyoumean'
 import fs from 'fs'
 import similarity from 'similarity'
-import fetch from 'node-fetch'
+
 
 let handler = m => m
 
@@ -25,10 +25,7 @@ handler.before = async function (m, { match, usedPrefix }) {
 
     if (mean && noPrefix.toLowerCase() !== mean.toLowerCase()) {
 
-      // Ambil gambar thumbnail baru
-      let thumb = await fetch("https://files.cloudkuimages.guru/images/87ab7458a894.jpeg")
-      let thumbnail = Buffer.from(await thumb.arrayBuffer())
-
+      
       let caption = `_Apakah maksudmu command ini?_\n\n` +
                  `_ᴄᴏᴍᴍᴀɴᴅ: ${usedPrefix + mean}_\n` +
                  `_ᴋᴇᴍɪʀɪᴘᴀɴ: ${similarityPercentage}%_`
