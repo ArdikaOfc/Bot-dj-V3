@@ -19,7 +19,7 @@ Aku *ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻*, bot WhatsApp yang siap memba
 ───〔 🤖 BOT INFO 〕───
 • *Nama* : ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻
 • *Creator* : ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻
-• *Versi* : 2.0.0
+• *Versi* : 3.0.0
 • *System* : Plugins ESM
 ──────────────────
 _Klik salah satu button di bawah ini untuk melihat detail_
