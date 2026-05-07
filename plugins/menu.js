@@ -54,79 +54,79 @@ await conn.sendMessage(m.chat, {
                             highlight_label: `ᴘᴏᴘᴜʟᴇʀ`,
 							rows: [{
 								title: 'All Menu',
-                                description: 'Menampilka All Menu',
+                                description: 'Menampilkan All Menu',
 								id: `.allmenu`
 							},{
 								title: 'Menu Pasangan',
-                                description: 'Menampilka Menu Pasangan',
+                                description: 'Menampilkan Menu Pasangan',
 								id: `.menupasangan`
 							},{
 								title: 'Menu Anime',
-                                description: 'Menampilka Menu Anime',
+                                description: 'Menampilkan Menu Anime',
 								id: `.menuanime`
 							},{
 								title: 'Menu Rpg',
-                                description: 'Menampilka Menu Rpg',
+                                description: 'Menampilkan Menu Rpg',
 								id: `.menurpg`
 							},{
 								title: 'Menu Download',
-                                description: 'Menampilka Menu Download',
+                                description: 'Menampilkan Menu Download',
 								id: `.menudownload`
 							},{
 								title: 'Menu Audio',
-                                description: 'Menampilka Menu Audio',
+                                description: 'Menampilkan Menu Audio',
 								id: `.menuaudio`
 							},{
 								title: 'Menu Tools',
-                                description: 'Menampilka Menu Tools',
+                                description: 'Menampilkan Menu Tools',
 								id: `.menutools`
 							},{
 								title: 'Menu Ai',
-                                description: 'Menampilka Menu Ai',
+                                description: 'Menampilkan Menu Ai',
 								id: `.menuai`
 							},{
 								title: 'Menu Fun',
-                                description: 'Menampilka Menu Fun',
+                                description: 'Menampilkan Menu Fun',
 								id: `.menufun`
 							},{
 								title: 'Menu Game',
-                                description: 'Menampilka Menu game',
+                                description: 'Menampilkan Menu game',
 								id: `.menugame`
 							},{
 								title: 'Menu Group',
-                                description: 'Menampilka Menu Group',
+                                description: 'Menampilkan Menu Group',
 								id: `.menugroup`
 							},{
                                 title: 'Menu Maker',
-                                description: 'Menampilka Menu Maker',
+                                description: 'Menampilkan Menu Maker',
 								id: `.menumaker`
 							},{
 								title: 'Menu Info',
-                                description: 'Menampilka Menu Info',
+                                description: 'Menampilkan Menu Info',
 								id: `.menuinfo`
 							},{
 								title: 'Menu Internet',
-                                description: 'Menampilka Menu Internet',
+                                description: 'Menampilkan Menu Internet',
 								id: `.menuinternet`
 							},{
                                 title: 'Menu Store',
-                                description: 'Menampilka Menu Store',
+                                description: 'Menampilkan Menu Store',
 								id: `.menustore`
 							},{
                                 title: 'Menu Panel',
-                                description: 'Menampilka Menu Panel',
+                                description: 'Menampilkan Menu Panel',
 								id: `.menupanel`
 							},{
                                 title: 'Menu Search',
-                                description: 'Menampilka Menu Search',
+                                description: 'Menampilkan Menu Search',
 								id: `.menusearch`
 							},{
                                 title: 'Menu Sticker',
-                                description: 'Menampilka Menu Sticker',
+                                description: 'Menampilkan Menu Sticker',
 								id: `.menusticker`
 							},{
 								title: 'Menu Owner',
-                                description: 'Menampilka Menu Owner',
+                                description: 'Menampilkan Menu Owner',
 								id: `.menuowner`
 							}]
 						}]
