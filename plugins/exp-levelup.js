@@ -10,7 +10,7 @@ if (before === user.level) {
 let { min, xp, max } = xpRange(user.level, global.multiplier)
 return m.reply(`Level ${user.level}\nXP ${user.exp + min} / ${max + min}`)
 }
-let pp = 'https://i.ibb.co/GPp2064/avatar-contact.png'
+let pp = 'https://github.com/ArdikaOfc/Bot-dj-V3/blob/main/src%2Favatar_contact.png'
 try {
 pp = await conn.profilePictureUrl(m.sender, 'image')
 } catch (e) {}
