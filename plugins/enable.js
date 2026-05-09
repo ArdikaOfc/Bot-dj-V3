@@ -81,15 +81,6 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       global.opts.pconly = isEnable
       break
 
-     case 'autocleartmp':
-            isAll = true
-            if (!isOwner) {
-                global.dfail('owner', m, conn)
-                throw false
-            }
-            setting.cleartmp = isEnable
-            break
-
     case 'owneronly':
       isAll = true
       if (!isROwner) {
@@ -180,6 +171,18 @@ case 'antilinkkick':
             }
             chat.antiLinkWa = isEnable
             break
+        case 'antiLinkchannel':
+        case 'antilinksaluran': 
+        case 'antilinkch':
+            if (m.isGroup) {
+                if (!(isAdmin || isOwner)) {
+                    global.dfail('admin', m, conn)
+                    throw false
+                }
+            }
+            chat.antiLinkChannel = isEnable
+            break
+
 
     case 'menu':
       if (m.isGroup && !isAdmin && !isOwner) {
@@ -215,6 +218,10 @@ List option:
 🗃️ document
 📢 gconly
 👾 antibot
+🖇️ antilinkwa
+🔫 antilinkkick 
+🗑️ antilinkdelete 
+🚧 antilinkch
 📦 menu
 🔞 nsfw
 🔕 nyimak
@@ -226,7 +233,6 @@ List option:
 📨 swonly
 👁️‍🗨️ viewonce
 📝 autogpt
-🚮 autocleartmp
 
 Contoh:
 ${usedPrefix}enable welcome
