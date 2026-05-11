@@ -8,7 +8,7 @@ let before = user.level * 1
 while (canLevelUp(user.level, user.exp, global.multiplier)) user.level++
 if (before === user.level) {
 let { min, xp, max } = xpRange(user.level, global.multiplier)
-return m.reply(`Level ${user.level}\nXP ${user.exp + min} / ${max + min}`)
+return m.reply(`Level ${user.level}\nXP ${user.exp - min} / ${max - min}`)
 }
 let pp = 'https://github.com/ArdikaOfc/Bot-dj-V3/blob/main/src%2Favatar_contact.png'
 try {
@@ -60,5 +60,5 @@ function xpRange(level, multiplier = 1) {
 if (level < 0) return { min: +1, xp: +1, max: +1 }
 let min = level === 0 ? 0 : Math.pow(level, 2) * 100 * multiplier
 let max = Math.pow(level + 1, 2) * 100 * multiplier
-return { min, xp: max + min, max }
+return { min, xp: max - min, max }
 }
