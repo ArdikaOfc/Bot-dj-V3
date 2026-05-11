@@ -1,31 +1,61 @@
-import axios from 'axios'
- import FormData from 'form-data'
- let handler = async (m, { conn, text, usedPrefix, command }) => {
-   if (!text) return m.reply(`Kirim atau reply foto dengan caption:\n\n*${usedPrefix + command} <prompt>*`)
-                try {
-            const q = m.quoted ? m.quoted : m
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+    if (!m.quoted && !/image/.test(m.mimetype || "")) {
+        return m.reply(`Kirim atau reply foto dengan caption:\n\n*${usedPrefix + command} <prompt>*`);
+    }
+    
+    if (!text) return m.reply("❌ Masukkan prompt untuk mengedit gambar.");
+
+    const q = m.quoted ? m.quoted : m
     const mime = (q.msg || q).mimetype || ''
-    if (!mime.startsWith('image/')) return m.reply('Mana Gambarnya?')
+    if (!mime.startsWith('image/')) return m.reply("❌ Itu bukan gambar!");
 
-    m.reply('Tunggu Sedang Di proses...')
-    const buffer = await q.download()
+    let img = await q.download();
 
-    const form = new FormData()
-    form.append('files[]', buffer, { filename: 'editimage.jpg' })
+    // ===================================================
+    // 1. UPLOAD TO UGUU (fixed blob)
+    // ===================================================
+    let form = new FormData();
+    form.append("files[]", new Blob([img]), "image.jpg");
 
-    const url = encodeURIComponent((await axios.post('https://uguu.se/upload.php', form, { headers: form.getHeaders() })).data.files[0].url)
+    let up = await fetch("https://uguu.se/upload", {
+        method: "POST",
+        body: form,
+    }).catch(e => null);
 
-    await conn.sendMessage(m.chat, { image: { url: `https://api-faa.my.id/faa/editfoto?url=${encodeURIComponent(url)}&prompt=${encodeURIComponent(text)}` }, footer: global.footer, caption: `✨ *Edit Foto Berhasil!*\nPrompt: ${text}`, contextInfo: { forwardingScore: 10, isForwarded: true, } }, { quoted: m })
+    if (!up || !up.ok) return m.reply("❌ Gagal upload ke Uguu!");
 
-  } catch (e) {
-    m.reply(e.message)
-  }
-}
+    let json = await up.json().catch(() => null);
+    if (!json || !json.files || !json.files[0]?.url) {
+        return m.reply("❌ Upload gagal!");
+    }
 
-handler.help = ['editimg'];
-handler.command = ['editimg','editimage','editfoto'];
-handler.tags = ['ai'];
+    let uploaded = json.files[0].url;
+    console.log("UGUU:", uploaded);
+
+    await m.reply("⏳ Sedang memproses gambar...");
+
+    // ===================================================
+    // 2. PROSES EDIT FOTO VIA API FAA
+    // ===================================================
+    let api = `https://api-faa.my.id/faa/editfoto?url=${encodeURIComponent(uploaded)}&prompt=${encodeURIComponent(text)}`;
+
+    let get = await fetch(api).catch(e => null);
+    if (!get || !get.ok) return m.reply("❌ API gagal memproses gambar.");
+
+    let buffer = Buffer.from(await get.arrayBuffer());
+
+    // ===================================================
+    // 3. KIRIM KE USER
+    // ===================================================
+    await conn.sendMessage(m.chat, {
+        image: buffer,
+        caption: `✨ *Edit Foto Berhasil!*\nPrompt: ${text}`
+    }, { quoted: m });
+};
+
+handler.help = ["editimg <prompt>"];
+handler.tags = ["ai"];
+handler.command = /^editimg$/i;
 handler.limit = true
 handler.register = true
-
 export default handler;
