@@ -8,7 +8,7 @@ let handler = async (m, { conn }) => {
   if (!mime) return m.reply('✨ Reply/kirim file yang mau diupload.')
 
   try {
-    await m.react('✨')
+    await m.react('🕒')
 
     let buffer = await q.download()
     if (!buffer) throw 'Gagal download media'
@@ -32,11 +32,12 @@ let handler = async (m, { conn }) => {
     await conn.sendMessage(
       m.chat,
       {
-        text: `✨ *Done*\n\n✨ ${url}`,
+        text: `📤 𝐓𝐎𝐔𝐑𝐋 📤\n\nɴᴇᴋᴏʜɪᴍᴇ : ${url}`,
         ...global.fakestatus
       },
       { quoted: m }
     )
+    m.react('✅')
 
   } catch (e) {
     console.error(e)
