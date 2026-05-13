@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn }) => {
-  let res = await fetch('https://files.catbox.moe/hjnj00.webp')
+  let res = await fetch('https://c.termai.cc/i171/MLOeA')
   let buffer = await res.buffer()
 
   await conn.sendMessage(m.chat, { sticker: buffer }, { quoted: m })
