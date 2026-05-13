@@ -1,3 +1,4 @@
+const { proto } = (await import('@adiwajshing/baileys')).default;
 import axios from 'axios'
 import FormData from 'form-data'
 
@@ -29,14 +30,30 @@ let handler = async (m, { conn }) => {
 
     let url = data.files[0].url || data.files[0]
 
-    await conn.sendMessage(
-      m.chat,
-      {
-        text: `📤 𝐓𝐎𝐔𝐑𝐋 📤\n\nɴᴇᴋᴏʜɪᴍᴇ : ${url}`,
-        ...global.fakestatus
-      },
-      { quoted: m }
-    )
+    const infoText = `📤 𝐓𝐎𝐔𝐑𝐋 📤\n\nɴᴇᴋᴏʜɪᴍᴇ : ${url}`
+        const msg = {
+      interactiveMessage: proto.Message.InteractiveMessage.create({
+        body: proto.Message.InteractiveMessage.Body.create({
+          text: infoText
+        }),
+        footer: proto.Message.InteractiveMessage.Footer.create({
+          text: "Tekan tombol untuk menyalin Link."
+        }),
+        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "Salin Link",
+                copy_code: url
+              })
+            }
+          ]
+        })
+      })
+    };
+
+    await m.conn.relayMessage(m.chat, msg, { messageId: m.key.id });
     m.react('✅')
 
   } catch (e) {
