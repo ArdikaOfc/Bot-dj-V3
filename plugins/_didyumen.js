@@ -44,14 +44,12 @@ handler.before = async function (m, { match, usedPrefix }) {
     headerType: 4,
     mentions: [m.sender],
     contextInfo: {
-      externalAdReply: {
-        title: 'BOTZ DJ WhatsApp Bot',
-        body: 'Simple • Fast • Multifungsi',
-        thumbnail: fs.readFileSync('./media/botdj1.jpg'),
-        sourceUrl: 'https://wa.me/6283115862272',
-        mediaType: 1,
-        renderLargerThumbnail: true
-      }
+            forwardingScore: 999,
+            isForwarded: true,
+            forwardedNewsletterMessageInfo: {
+                newsletterName: `「 ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻ 」`,
+                newsletterJid: "120363199397739684@newsletter"
+            },
     }
   }, { quoted: m })
     }
