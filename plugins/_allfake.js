@@ -24,12 +24,14 @@ handler.all = async function (m) {
                 newsletterName: `「 ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻ 」`,
                 newsletterJid: "120363199397739684@newsletter"
             },
+/*
             externalAdReply: {
                 title: `ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻`,
                 body: `${momentGreeting()}`,
                 previewType: "PHOTO",
                 thumbnail: thumb
             }
+*/
         }
     }
 
