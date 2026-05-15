@@ -3,7 +3,7 @@ Wm: https://whatsapp.com/channel/0029VaF9C4zId7nOTFF8ZK0v
 Jgn hapus wm ku
 Fitur:  Download MediaFire
 Type : Plugins Esm 
-Api: https://rynekoo-api.hf.space/d
+Api: https://api.nexray.eu.cc/
 Creator: ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻
 */
 import axios from 'axios'
@@ -18,8 +18,8 @@ let handler = async (m, { conn, text, usedPrefix, command, isPrems }) => {
         // React loading
         await conn.sendMessage(m.chat, { react: { text: '⏳', key: m.key } });
 
-        let res = await axios.get(`https://rynekoo-api.hf.space/downloader/mediafire?url=${encodeURIComponent(text)}`)
-        let result = res.data?.result || "Gagal mendapatkan api rynekoo."
+        let res = await axios.get(`https://api.nexray.eu.cc/downloader/mediafire?url=${encodeURIComponent(text)}`)
+        let result = res.data?.result || "Gagal mendapatkan api skylow.web.id."
         let caption = ` ༺ *M E D I A F I R E  D O W N L O A D* ༻
 *💌 Nama:* ${result.filename}
 *📊 Size:* ${result.filesize}
