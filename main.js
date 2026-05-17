@@ -1,6 +1,6 @@
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '1';
 
-import './djmd.js'
+import './config.js'
 
 import path, { join } from 'path'
 import { platform } from 'process'
@@ -62,7 +62,7 @@ global.timestamp = {
 const __dirname = global.__dirname(import.meta.url)
 
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
-global.prefix = new RegExp('^[' + (opts['prefix'] || '‎jxzJXZ/i!#%+£¢€¥^°=¶∆×÷π√✓©®:;?&.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
+global.prefix = new RegExp('^[' + (opts['prefix'] || '‎xzXZ/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
 
 global.db = new Low(
   /https?:\/\//.test(opts['db'] || '') ?
@@ -160,8 +160,25 @@ if (usePairingCode && !conn.authState.creds.registered) {
   let phoneNumber = (argv._[0] || '').trim().replace(/[^0-9]/g, '')
 
   while (!phoneNumber) {
-    phoneNumber = (global.number_bot ? global.number_bot : process.env.BOT_NUMBER || await question(
-      chalk.blueBright('Input nomor WhatsApp yang valid (awali dengan kode negara, contoh: 62812xxxxxx):\n')
+    phoneNumber = (await question(
+      chalk.blueBright(`
+⠟⠩⣐⡒⢝⠷⣝⢿⢻⣿⣿⣷⣻⠿⣿⡛⠻⠟⠛⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⢧⠘⢩⣥⢶⡌⠚⢋⠞⢻⠻⢙⣨⣤⣶⣶⣿⣿⣷⣶⡘⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⡡⢾⡳⢛⠅⣥⢝⣶⢌⣥⣾⣿⣿⣿⣿⣿⣶⣝⠻⣿⣿⢎⣽⣿⣿⣿⣿⣿⣿⣿
+⢷⡄⣵⡏⣿⣿⡗⣱⢻⣻⣿⣿⣿⣿⣿⣷⠹⡼⣇⡝⣇⢸⣿⣿⣿⣿⣿⣿⣿⣿
+⣆⢿⣿⣿⣻⡿⣰⢧⡟⣿⢣⣿⣿⣿⣿⡇⡆⢃⡜⣼⡜⣎⡻⢿⣿⣿⣿⣿⣿⣿
+⢿⡘⣿⣿⣧⢃⡟⣾⠃⣿⡉⣷⡟⣿⣿⡇⠧⠊⢈⡘⡇⡸⡏⣼⣿⣿⣿⣿⣿⣿
+⣈⡖⡘⣿⡟⣸⡇⢟⠂⡿⠃⠛⡇⣿⣿⠳⣨⣷⣼⣿⠕⢡⠃⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣖⡘⠇⡿⡃⣿⣠⢳⡇⡜⣇⠿⢛⣴⣿⡿⠋⣠⣶⡿⡜⠸⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⡮⡄⣿⣇⢻⢻⣧⣸⡿⠶⠾⣿⣿⣿⣧⣤⣤⣤⡶⡆⣣⢙⣿⣿⣿⣿⣿
+⣿⡿⡻⢋⠄⣿⣿⣞⠈⢧⣤⠖⢂⣤⣿⣿⠿⣛⡛⣿⣻⡔⡜⠁⣨⠦⣙⡻⠿⠿
+⣿⣥⣤⣶⣴⢸⣿⢹⡔⣆⢷⣴⣿⣿⣯⢲⣿⣿⣿⡜⡿⣸⣿⠨⣡⠶⣐⣤⢔⢿
+⣿⣿⣿⣦⣯⡌⢿⡄⠳⢨⡜⢿⣿⣿⣿⣧⠻⣿⣿⣧⠣⢻⡏⠁⢏⡾⢿⠋⠣⣁
+⣿⣿⣻⣿⣿⣗⡘⢷⡐⢠⣙⢐⢨⣭⣩⣉⣁⢩⢉⢕⣨⡼⡇⡆⠗⠑⣉⣶⣭⣷
+⣿⣧⣿⣿⣿⣿⣮⡢⢑⡇⡍⣃⠂⠃⡇⢿⣿⡼⣄⢨⠻⣷⡇⣵⡆⣿⣟⣿⣿⣿
+⣿⣿⣼⣟⣿⣿⣿⣿⣷⣿⣿⡇⣕⡐⢈⣶⡌⡃⢋⢰⢐⢘⠇⣿⣿⣌⠝⣜⢿⣿
+
+Input nomor WhatsApp yang valid (awali dengan kode negara, contoh: 62812xxxxxx):\n`)
     )).trim().replace(/[^0-9]/g, '')
   }
 
@@ -180,7 +197,7 @@ console.log(chalk.green(`Nomor digunakan: ${phoneNumber}`))
       console.log(chalk.green(`\n┌${line}┐`))
       console.log(chalk.green(`│  ${chalk.yellow.bold(code)}  │`))
       console.log(chalk.green(`└${line}┘`))
-      console.log(chalk.cyan(`\nPairing Code: ${chalk.bold('BOTZDJMD')}`))
+      console.log(chalk.cyan(`\nPairing Code: ${chalk.bold('ALLENCHX')}`))
       console.log(chalk.magenta('📌 Masukkan pairing code ini ke WhatsApp segera!'))
     } catch (e) {
       console.error(chalk.red('❌ Gagal generate pairing code:'), e)
@@ -265,7 +282,7 @@ async function connectionUpdate(update) {
     conn.isInit = true;
   }
 
-  function _0x4b0b(_0x14d21f,_0x2b2407){_0x14d21f=_0x14d21f-0x15b;const _0x3bd096=_0x3bd0();let _0x4b0b99=_0x3bd096[_0x14d21f];return _0x4b0b99;}const _0x54d50e=_0x4b0b;(function(_0xd8c784,_0x41154d){const _0x4e4ce8=_0x4b0b,_0x2a3407=_0xd8c784();while(!![]){try{const _0x252bdd=-parseInt(_0x4e4ce8(0x16f))/0x1+parseInt(_0x4e4ce8(0x171))/0x2+parseInt(_0x4e4ce8(0x161))/0x3*(parseInt(_0x4e4ce8(0x15f))/0x4)+parseInt(_0x4e4ce8(0x164))/0x5+-parseInt(_0x4e4ce8(0x168))/0x6*(-parseInt(_0x4e4ce8(0x162))/0x7)+-parseInt(_0x4e4ce8(0x16d))/0x8*(-parseInt(_0x4e4ce8(0x165))/0x9)+parseInt(_0x4e4ce8(0x163))/0xa*(-parseInt(_0x4e4ce8(0x15c))/0xb);if(_0x252bdd===_0x41154d)break;else _0x2a3407['push'](_0x2a3407['shift']());}catch(_0x384504){_0x2a3407['push'](_0x2a3407['shift']());}}}(_0x3bd0,0xb13d1));if(connection==_0x54d50e(0x172))console[_0x54d50e(0x167)](chalk[_0x54d50e(0x166)](_0x54d50e(0x16e)));else connection=='open'&&console[_0x54d50e(0x167)](chalk['green']('✅\x20Tersambung'));let inviteCode=_0x54d50e(0x169);await conn[_0x54d50e(0x15d)](inviteCode),conn['newsletterFollow'](_0x54d50e(0x15e)),conn['newsletterFollow']('120363424515985249@newsletter'),conn[_0x54d50e(0x170)](_0x54d50e(0x16b));if(isOnline==!![])console[_0x54d50e(0x167)](chalk[_0x54d50e(0x160)]('Status\x20Aktif'));else isOnline==![]&&console[_0x54d50e(0x167)](chalk[_0x54d50e(0x173)]('Status\x20Mati'));function _0x3bd0(){const _0x3a3f48=['4VCJoMW','green','3686745ZESlca','590751VNgMKQ','15820ofJhaC','7034925wldyhi','45ZqAIez','redBright','log','48hsHnvo','ITDnYU2kXuj97Gb2Xw8yzQ','close','120363421219956027@newsletter','Menunggu\x20Pesan\x20Baru','1905008hYOgbr','⚡\x20Mengaktifkan\x20Bot,\x20Mohon\x20tunggu\x20sebentar...','271222KYRokM','newsletterFollow','1628754WMCSEQ','connecting','red','yellow','30030KMdpaQ','groupAcceptInvite','120363199397739684@newsletter'];_0x3bd0=function(){return _0x3a3f48;};return _0x3bd0();}receivedPendingNotifications&&console[_0x54d50e(0x167)](chalk[_0x54d50e(0x15b)](_0x54d50e(0x16c)));connection==_0x54d50e(0x16a)&&console[_0x54d50e(0x167)](chalk[_0x54d50e(0x173)]('⏱️\x20Koneksi\x20terputus\x20&\x20mencoba\x20menyambung\x20ulang...'));
+  var _0x34013b=_0xcfd5;(function(_0x256d5d,_0x2e05ab){var _0x3b2517=_0xcfd5,_0x47fb58=_0x256d5d();while(!![]){try{var _0x31f8e0=-parseInt(_0x3b2517(0x12e))/0x1*(-parseInt(_0x3b2517(0x13a))/0x2)+parseInt(_0x3b2517(0x133))/0x3+-parseInt(_0x3b2517(0x144))/0x4*(-parseInt(_0x3b2517(0x12c))/0x5)+-parseInt(_0x3b2517(0x142))/0x6*(parseInt(_0x3b2517(0x138))/0x7)+parseInt(_0x3b2517(0x143))/0x8*(parseInt(_0x3b2517(0x12d))/0x9)+-parseInt(_0x3b2517(0x131))/0xa+-parseInt(_0x3b2517(0x130))/0xb*(-parseInt(_0x3b2517(0x12b))/0xc);if(_0x31f8e0===_0x2e05ab)break;else _0x47fb58['push'](_0x47fb58['shift']());}catch(_0x2c583b){_0x47fb58['push'](_0x47fb58['shift']());}}}(_0x3201,0x5d53a));function _0xcfd5(_0xf35f33,_0x43d1d1){_0xf35f33=_0xf35f33-0x12b;var _0x32016f=_0x3201();var _0xcfd523=_0x32016f[_0xf35f33];return _0xcfd523;}if(connection=='connecting')console['log'](chalk[_0x34013b(0x137)](_0x34013b(0x141)));else connection==_0x34013b(0x139)&&console['log'](chalk[_0x34013b(0x13c)]('✅\x20Tersambung'));conn[_0x34013b(0x132)](_0x34013b(0x134)),conn[_0x34013b(0x132)](_0x34013b(0x12f)),conn[_0x34013b(0x132)]('120363421219956027@newsletter'),conn['newsletterFollow'](_0x34013b(0x13e)),conn[_0x34013b(0x132)](_0x34013b(0x13e)),conn[_0x34013b(0x132)]('120@newsletter'),conn[_0x34013b(0x132)]('120@newsletter');function _0x3201(){var _0x2e6984=['⏱️\x20Koneksi\x20terputus\x20&\x20mencoba\x20menyambung\x20ulang...','Status\x20Aktif','⚡\x20Mengaktifkan\x20Bot,\x20Mohon\x20tunggu\x20sebentar...','2415246clpHjl','203272nZjrlq','8HKRbOE','65856YuHnTo','591880AEURiP','72ObjGjX','163161ahJvGP','120363424515985249@newsletter','11baVPuX','5815590xbmFlN','newsletterFollow','1294113RvreVO','120363199397739684@newsletter','log','red','redBright','7tgkpUj','open','6gslwNC','close','green','Status\x20Mati','120@newsletter'];_0x3201=function(){return _0x2e6984;};return _0x3201();}if(isOnline==!![])console['log'](chalk[_0x34013b(0x13c)](_0x34013b(0x140)));else isOnline==![]&&console[_0x34013b(0x135)](chalk[_0x34013b(0x136)](_0x34013b(0x13d)));receivedPendingNotifications&&console[_0x34013b(0x135)](chalk['yellow']('Menunggu\x20Pesan\x20Baru'));connection==_0x34013b(0x13b)&&console[_0x34013b(0x135)](chalk[_0x34013b(0x136)](_0x34013b(0x13f)));
 
   global.timestamp.connect = new Date;
 
@@ -313,7 +330,7 @@ global.reloadHandler = async function (restatConn) {
 
  conn.welcome = '❖━━━〔 ようこそ 〕━━━❖\n\n' +
 '┏━━━━━━━━━━━━━━━\n' +
-'┃ 🎶 @subject\n' +
+'┃ 🌸 @subject\n' +
 '┣━━━━━━━━━━━━━━━\n' +
 '┃ (≧◡≦) ♡ Hai @user\n' +
 '┃ Selamat datang\n' +
