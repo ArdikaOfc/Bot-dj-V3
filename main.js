@@ -197,7 +197,7 @@ console.log(chalk.green(`Nomor digunakan: ${phoneNumber}`))
       console.log(chalk.green(`\n┌${line}┐`))
       console.log(chalk.green(`│  ${chalk.yellow.bold(code)}  │`))
       console.log(chalk.green(`└${line}┘`))
-      console.log(chalk.cyan(`\nPairing Code: ${chalk.bold('ALLENCHX')}`))
+      console.log(chalk.cyan(`\nPairing Code: ${chalk.bold('BOTZDJMD')}`))
       console.log(chalk.magenta('📌 Masukkan pairing code ini ke WhatsApp segera!'))
     } catch (e) {
       console.error(chalk.red('❌ Gagal generate pairing code:'), e)
