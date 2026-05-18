@@ -62,7 +62,7 @@ global.timestamp = {
 const __dirname = global.__dirname(import.meta.url)
 
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
-global.prefix = new RegExp('^[' + (opts['prefix'] || '‎xzXZ/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
+global.prefix = new RegExp('^[' + (opts['prefix'] || '‎jJrRxzXZ/i!#%+£¢€¥^°=¶∆§•↑↓→←™*¡×÷π√✓©®:;?&.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
 
 global.db = new Low(
   /https?:\/\//.test(opts['db'] || '') ?
@@ -160,7 +160,7 @@ if (usePairingCode && !conn.authState.creds.registered) {
   let phoneNumber = (argv._[0] || '').trim().replace(/[^0-9]/g, '')
 
   while (!phoneNumber) {
-    phoneNumber = (await question(
+    phoneNumber = (global.number_bot ? global.number_bot : process.env.BOT_NUMBER || await question(
       chalk.blueBright(`
 ⠟⠩⣐⡒⢝⠷⣝⢿⢻⣿⣿⣷⣻⠿⣿⡛⠻⠟⠛⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⢧⠘⢩⣥⢶⡌⠚⢋⠞⢻⠻⢙⣨⣤⣶⣶⣿⣿⣷⣶⡘⣿⣿⣿⣿⣿⣿⣿⣿⣿
