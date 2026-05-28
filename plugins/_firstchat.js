@@ -9,7 +9,7 @@ export async function before(m) {
     await m.reply(`
 📮Note: Jangan spam botnya
 ⏩Ketik *.menu* untuk menampilkan menu
-📂Script : Join nah gb sc free gueh https://chat.whatsapp.com/ITDnYU2kXuj97Gb2Xw8yzQ
+📂Script : Join nah gb sc free gueh https://chat.whatsapp.com/KU92BBHIi2g4CnIcfFBw0B
 
 📝Ingin menghilangkan *limit*?
 Beli akses *Premium*
