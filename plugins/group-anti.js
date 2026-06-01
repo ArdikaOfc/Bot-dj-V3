@@ -32,4 +32,7 @@ let handler = async (m, { args, isAdmin, isOwner }) => {
 handler.command = /^anti$/i
 handler.tags = ['group']
 handler.help = ['anti <link|image|sticker|toxic> on/off']
+  handler.botAdmin = true
+  handler.group = true
+  handler.admin = true
 export default handler
