@@ -35,5 +35,6 @@ handler.help = ['poll']
 handler.tags = ['group']
 handler.command = /^(poll|polling)$/i
 handler.group = true
+  handler.admin = true
 
 export default handler
