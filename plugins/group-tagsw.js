@@ -126,6 +126,7 @@ Izumi.help = ["swgc", "upswgc"];
 Izumi.command = ["swgc", "upswgc"];
 Izumi.tags = ["tools"];
 Izumi.admin = true;
+  Izumi.botAdmin = true
 
 async function toVN(inputBuffer) {
   return new Promise((resolve, reject) => {
