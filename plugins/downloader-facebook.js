@@ -1,7 +1,14 @@
 /* 
 Downloader Facebook
 Source Scrape : https://whatsapp.com/channel/0029VbBJKfE0gcfCAJZEVh3R/125
+
+Wm: https://whatsapp.com/channel/0029VaF9C4zId7nOTFF8ZK0v
+Jgn hapus wm ku
+Fitur:  Facebook Downloader
+Type : Plugins Esm 
+Creator: ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻
 */
+
 import axios from "axios";
 
 async function getToken() {
@@ -64,6 +71,7 @@ async function fbDownloader(fbUrl) {
 
 let handler = async (m, { conn, text }) => {
   if (!text) return m.reply("Masukkan link Facebook terlebih dahulu, contoh:\n.fb https://facebook.com/...");
+  await conn.sendMessage(m.chat, { react: { text: '🕒', key: m.key } })
 
   try {
     const results = await fbDownloader(text);
@@ -74,13 +82,22 @@ let handler = async (m, { conn, text }) => {
     const { data: buffer } = await axios.get(videoUrl, { responseType: 'arraybuffer' });
 
     await conn.sendMessage(m.chat, { video: buffer, caption: `📥 Download dari Facebook\nKualitas: ${results[0].quality}` }, { quoted: m });
+    await conn.sendMessage(m.chat, {
+    audio: buffer,
+    mimetype: 'audio/mpeg',
+    ptt: false
+  }, { quoted: m })
+  await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
   } catch (e) {
+      await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key } })
     m.reply("❌ Gagal mengunduh video: " + e.message);
   }
 };
 
-handler.help = ['facebook <link>'];
-handler.tags = ['downloader'];
-handler.command = /^fb|facebook$/i;
-handler.limit = true;
-export default handler;
+handler.help = ['fb'].map(v => v + ' <url|resolusi>')
+handler.tags = ['downloader']
+handler.command = /^(fb|facebook|fesnuk)$/i
+handler.limit = true
+handler.register = true
+
+export default handler
