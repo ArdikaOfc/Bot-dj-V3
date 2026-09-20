@@ -6,7 +6,7 @@ import path from 'path'
 
 const __dirname = './tmp'
 const fontPath = path.join(__dirname, 'patrick.ttf')
-const template = 'https://cdn.nekohime.site/file/D0h6tnK8.png'
+const template = 'https://raw.githubusercontent.com/ArdikaOfc/Database/main/uploads/67435b-1789923364519.jpg'
 
 async function getBuffer(url) {
   const res = await fetch(url)
@@ -63,12 +63,12 @@ async function makeMeme(text) {
   ctx.fillStyle = '#111'
   ctx.textAlign = 'center'
   ctx.textBaseline = 'middle'
-  ctx.font = '70px Hand'
+  ctx.font = '85px Hand'
 
   const maxWidth = 520
   const lines = wrapText(ctx, text, maxWidth)
 
-  const startY = 720
+  const startY = 840
 
   ctx.save()
   ctx.translate(bg.width / 2, startY)
@@ -101,7 +101,7 @@ let handler = async (m, { conn, text }) => {
       author: global.stickauth,
       categories: ['✨'],
       id: '.',
-      quality: 70,
+      quality: 85,
       background: null
     })
 
@@ -115,7 +115,7 @@ let handler = async (m, { conn, text }) => {
 
 handler.help = ['cosplaybrat <teks>']
 handler.tags = ['sticker']
-handler.command = ['cosplaybrat','bratcosplay']
+handler.command = ['cosplaybrat', 'bratcosplay', 'cosplayerbrat', 'bratcosplayer']
 handler.limit = true
 handler.register = true
 
