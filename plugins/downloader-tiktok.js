@@ -1,68 +1,68 @@
-import axios from 'axios';
-import cheerio from 'cheerio';
+/*
+Wm: https://whatsapp.com/channel/0029VaF9C4zId7nOTFF8ZK0v
+Jgn hapus wm ku
+Fitur:  Download Tiktok 
+Type : Plugins Esm 
+Api: https://api.nexray.web.id/
+Creator: ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻
+*/
 
-const ttsave = {
-  download: async (url) => {
-    const apiUrl = 'https://ttsave.app/download';
-    const headers = {
-      'Accept': 'application/json, text/plain, */*',
-      'Content-Type': 'application/json',
-      'User-Agent': 'Mozilla/5.0 (Android 10; Mobile; rv:131.0) Gecko/131.0 Firefox/131.0',
-      'Referer': 'https://ttsave.app/id'
-    };
+import axios from "axios";
 
-    const data = { query: url, language_id: "2" };
-
-    try {
-      const response = await axios.post(apiUrl, data, { headers });
-      const html = response.data;
-      return await ttsave.extract(html);
-    } catch (error) {
-      return null;
+let handler = async (m, { conn, args, command }) => {
+  try {
+    if (!args[0]) return m.reply(`*Example :* .${command} https://vt.tiktok.com/ZSUTPSGr3/`);
+    m.reply("⏳Otw Mengunduh bosz...");
+    await conn.sendMessage(m.chat, { react: { text: "⏳", key: m.key } });
+    
+    const apiUrl = `https://api.nexray.eu.cc/downloader/tiktok?url=${encodeURIComponent(args[0])}`;
+    
+    const { data } = await axios.get(apiUrl);
+    
+    if (!data.status || !data.result) {
+      return m.reply("❌ Gagal mendapatkan data dari API.");
+      await conn.sendMessage(m.chat, { react: { text: "", key: m.key } });
     }
-  },
+    
+    const res = data.result;
+    
+    // Membuat caption menarik dari data JSON
+    let caption = `*TIKTOK DOWNLOADER*\n\n`;
+    caption += `👤 *Author:* ${res.author?.nickname || '-'} (@${res.author?.fullname || '-'})\n`;
+    caption += `📝 *Title:* ${res.title || '-'}\n`;
+    caption += `⏱️ *Duration:* ${res.duration || '-'}\n`;
+    caption += `📈 *Stats:* ❤️ ${res.stats?.likes || 0} | 💬 ${res.stats?.comment || 0} | 🔄 ${res.stats?.share || 0}`;
 
-  extract: async (html) => {
-    const $ = cheerio.load(html);
-    return {
-      username: $('h2.font-extrabold').text().trim(),
-      userHandle: $('a[title]').text().trim(),
-      description: $('p.oneliner').text().trim(),
-      downloadLinks: {
-        video: $('a[type="no-watermark"]').attr('href') || $('a[type="watermark"]').attr('href'),
-        image: $('a[type="cover"]').attr('href'),
-        audio: $('a[type="audio"]').attr('href')
+    const mediaUrl = res.data; 
+    const audioUrl = res.music_info?.url;
+
+    const slides = res.images || (Array.isArray(mediaUrl) ? mediaUrl : []);
+
+    if (slides.length > 0) {
+      
+      for (let i = 0; i < slides.length; i++) {
+        
+        let textCaption = i === 0 ? caption : ""; 
+        await conn.sendMessage(m.chat, { image: { url: slides[i] }, caption: textCaption }, { quoted: m });
       }
-    };
+    } else if (mediaUrl && typeof mediaUrl === 'string') {
+      await conn.sendMessage(m.chat, { video: { url: mediaUrl }, caption: caption }, { quoted: m });
+    } else {
+      return m.reply("❌ Media tidak ditemukan dari respon API.");
+      await conn.sendMessage(m.chat, { react: { text: "", key: m.key } });
+    }
+    
+    
+    if (audioUrl) {
+      await conn.sendMessage(m.chat, { audio: { url: audioUrl }, mimetype: "audio/mpeg" }, { quoted: m });
+    }
+    
+  } catch (e) {
+    console.error(e);
+    m.reply(`❌ Terjadi kesalahan: ${e.response?.data?.message || e.message}`);
+    await conn.sendMessage(m.chat, { react: { text: "❌ ", key: m.key } });
   }
-};
-
-const handler = async (m, { conn, text }) => {
-  if (!text) return m.reply('Mana link TikTok-nya?');
-
-  m.reply('Tunggu sebentar, lagi ngunduh...');
-  const result = await ttsave.download(text);
-  if (!result) return m.react('❌');
-
-  if (result.downloadLinks.video) {
-    await conn.sendMessage(m.chat, {
-      video: { url: result.downloadLinks.video }
-    });
-  } else if (result.downloadLinks.image) {
-    await conn.sendMessage(m.chat, {
-      image: { url: result.downloadLinks.image }
-    });
-  } else {
-    return m.react('❌');
-  }
-
-  if (result.downloadLinks.audio) {
-    await conn.sendMessage(m.chat, {
-      audio: { url: result.downloadLinks.audio },
-      mimetype: 'audio/mp4'
-    });
-  }
-};
+}
 
 handler.help = ['tt', 'tiktok', 'ttdl', 'tiktokdl'];
 handler.tags = ['downloader']
