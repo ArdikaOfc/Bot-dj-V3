@@ -41,7 +41,7 @@ global.autorecording = true // default mati
 global.readMore = readMore
 global.author = 'ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻'
 global.namebot = 'ᴹᴿ᭄༺DjBotzོ - MDོ ×፝֟͜×༻'
-global.ch = '120363199397739684@newsletter',
+global.ch = '120363414140246605@newsletter',
 global.wm = 'ᴿꜰ᭄༺𝙰𝚛𝚍𝚒𝚔𝚊𝙾𝚏𝚌ོ ×፝֟͜×༻'
 global.watermark = wm
 global.versi = '3.0.0'
@@ -57,7 +57,7 @@ global.loading = (m, conn, back = false) => {
 //*============= SOSMED =============*/
 global.sig = 'https://www.instagram.com/ardi_procet28'
 global.sgh = 'https://github.com/ArdikaOfc'
-global.sgc = 'https://whatsapp.com/channel/0029VaF9C4zId7nOTFF8ZK0v'
+global.sgc = 'https://whatsapp.com/channel/0029Vb95xi3CxoAwES5niN2d'
 global.gc = 'https://chat.whatsapp.com/ITDnYU2kXuj97Gb2Xw8yzQ'
 global.sgw = '_'
 global.sdc = '-'
